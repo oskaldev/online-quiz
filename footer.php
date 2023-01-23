@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="footer-copy-right">
-          <p>Copyright © 2019.</p>
+          <p>Copyright oskaldev © 2023.</p>
         </div>
       </div>
     </div>

@@ -39,9 +39,9 @@
                       <ul class="nav navbar-nav mai-top-nav">
                         <li class="nav-item"><a href="#" class="nav-link">Выбрать тест</a>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Last Results</a>
+                        <li class="nav-item"><a href="#" class="nav-link">Последние результаты</a>
                         </li>
-                        <li class="nav-item"><a href="login.php" class="nav-link">Log Out</a>
+                        <li class="nav-item"><a href="login.php" class="nav-link">Выйти</a>
                         </li>
                         <!-- <li class="nav-item dropdown res-dis-nn">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
@@ -65,7 +65,7 @@
                         <li class="nav-item">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                             <img src="img/avatar-mini2.jpg" alt="" />
-                            <span class="admin-name">User</span>
+                            <span class="admin-name"><?php echo $_SESSION["username"]; ?></span>
                             <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                           </a>
                           <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
@@ -77,25 +77,11 @@
                             </li>
                             <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                             </li> -->
-                            <li><a href="login.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
+                            <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
                             </li>
                           </ul>
                         </li>
-                        <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
 
-                          <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
-                            <ul class="nav nav-tabs custon-set-tab">
-                              <li class="active"><a data-toggle="tab" href="#Notes">Notes</a>
-                              </li>
-                              <li><a data-toggle="tab" href="#Projects">Projects</a>
-                              </li>
-                              <li><a data-toggle="tab" href="#Settings">Settings</a>
-                              </li>
-                            </ul>
-
-
-                          </div>
-                        </li>
                       </ul>
                     </div>
                   </div>
@@ -117,7 +103,8 @@
 
                   <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 text-right">
                     <ul class="breadcome-menu">
-                      <li>Count Down timer
+                      <li>
+                        <div id="timer" style="display: block;"></div>
                       </li>
 
                     </ul>

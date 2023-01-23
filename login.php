@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 ?>
 
@@ -75,9 +76,11 @@ include "connection.php";
             </script>
         <?php
         } else {
+
+            $_SESSION["username"]=$_POST["username"];
         ?>
             <script>
-                window.location = "demo.php";
+                window.location = "select_exam.php";
             </script>
     <?php
         }
