@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_array($res)) {
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Обновить вопросы c картинками</h1>
+        <h1>Обновить вопросы</h1>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@ while ($row = mysqli_fetch_array($res)) {
                   <div class="card-body card-block">
                     <div class="form-group">
                       <label class=" form-control-label">Изменить вопрос</label>
-                      <input type="text" name="fquestion" placeholder="Добавьте вопрос" class="form-control" value="<?php echo $question ?>">
+                      <input type="text" name="fquestion" placeholder="Изменить вопрос" class="form-control" value="<?php echo $question ?>">
                     </div>
                     <div class="form-group">
                       <img src="<?php echo $opt1 ?>" height="50" width="50"> <br>
@@ -133,6 +133,7 @@ if (isset($_POST["submit2"])) {
     move_uploaded_file($_FILES["fanswer"]["tmp_name"], $dst5);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', answer='$dst_db5' where id=$id ") or die(mysqli_error($link));;
   }
+
   mysqli_query($link, "update questions set question='$_POST[fquestion]' where id=$id ") or die(mysqli_error($link));;
 
 ?>

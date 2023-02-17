@@ -29,8 +29,8 @@ while ($row = mysqli_fetch_array($res)) {
                   <div class="card-header"><strong>Добавьте новые вопросы</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вопросы</label>
-                      <input type="text" name="question" placeholder="Добавьте вопросы" class="form-control">
+                      <label class=" form-control-label">Добавьте вопрос</label>
+                      <input type="text" name="question" placeholder="Добавьте вопрос" class="form-control">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Добавьте вариант ответа-1</label>
@@ -93,6 +93,43 @@ while ($row = mysqli_fetch_array($res)) {
                   </div>
                 </div>
               </div>
+
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-header"><strong>Добавьте новые вопросы</strong></div>
+                  <div class="card-body card-block">
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вопрос</label>
+                      <input type="file" name="iquestion" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вариант ответа-1</label>
+                      <input type="text" name="iopt1" placeholder="Добавьте вариант ответа-1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вариант ответа-2</label>
+                      <input type="text" name="iopt2" placeholder="Добавьте вариант ответа-2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вариант ответа-3</label>
+                      <input type="text" name="iopt3" placeholder="Добавьте вариант ответа-3" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вариант ответа-4</label>
+                      <input type="text" name="iopt4" placeholder="Добавьте вариант ответа-4" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте правильный ответ</label>
+                      <input type="text" name="ianswer" placeholder="Добавьте правильный ответ" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" name="submit3" value="Добавить" class="btn btn-success">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </form>
           </div>
         </div>
@@ -125,11 +162,17 @@ while ($row = mysqli_fetch_array($res)) {
                 echo $row["question_no"];
                 echo "</td>";
                 echo "<td>";
-                echo $row["question"];
+                if (strpos($row["question"], 'opt_images/') !== false) {
+              ?>
+                  <img src="<?php echo $row["question"] ?>" height="50" width="50">
+                <?php
+                } else {
+                  echo $row["question"];
+                }
                 echo "</td>";
                 echo "<td>";
                 if (strpos($row["opt1"], 'opt_images/') !== false) {
-              ?>
+                ?>
                   <img src="<?php echo $row["opt1"] ?>" height="50" width="50">
                 <?php
                 } else {
@@ -177,6 +220,10 @@ while ($row = mysqli_fetch_array($res)) {
                 if (strpos($row["opt1"], 'opt_images/') !== false) {
                 ?>
                   <a href="edit_option_images.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?>">Изменить</a>
+                <?php
+                } else if (strpos($row["question"], 'opt_images/') !== false) {
+                ?>
+                  <a href="edit_option_images-question.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?>">Изменить</a>
                 <?php
                 } else {
                 ?>
@@ -289,6 +336,41 @@ if (isset($_POST["submit2"])) {
 }
 ?>
 
+<?php
+if (isset($_POST["submit3"])) {
+  $loop = 0;
+  $count = 0;
+  $res = mysqli_query($link, "select * from questions where category='$exam_category' order by id asc ") or die(mysqli_error($link));
+  $count = mysqli_num_rows($res);
+
+  if ($count == 0) {
+  } else {
+    while ($row = mysqli_fetch_array($res)) {
+      $loop = $loop + 1;
+      mysqli_query($link, "update questions set question_no='$loop' where id = $row[id] ");
+    }
+  }
+  $loop = $loop + 1;
+
+  $iquestion = $_FILES["iquestion"]["name"];
+  $dst = "./opt_images/" . $iquestion;
+  $dst_db = "opt_images/" . $iquestion;
+  move_uploaded_file($_FILES["iquestion"]["tmp_name"], $dst);
+
+
+  mysqli_query($link, "insert into questions values(NULL,'$loop', '$dst_db','$_POST[iopt1]','$_POST[iopt2]','$_POST[iopt3]','$_POST[iopt4]','$_POST[ianswer]', '$exam_category')") or die(mysqli_error($link));
+
+
+?>
+  <script>
+    alert("Вопросы добавлены !");
+    window.location.href = window.location.href;
+  </script>
+<?php
+
+
+}
+?>
 
 <?php
 include 'footer.php';

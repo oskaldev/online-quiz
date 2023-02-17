@@ -39,36 +39,37 @@ while ($row = mysqli_fetch_array($res)) {
         <div class="card">
           <div class="card-body">
             <div class="col-lg-12">
-              <form name="form1" action="" method="post">
+              <form name="form1" action="" method="post" enctype="multipart/form-data">
                 <div class="card">
-                  <div class="card-header"><strong>Измените вопросы</strong></div>
+                  <div class="card-header"><strong>Обновить вопросы</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
+                      <img src="<?php echo $question ?>" height="150" width="150"> <br>
                       <label class=" form-control-label">Изменить вопрос</label>
-                      <input type="text" name="question" class="form-control" value="<?php echo $question ?>">
+                      <input type="file" name="iquestion" class="form-control">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Изменить вариант ответа-1</label>
-                      <input type="text" name="opt1" class="form-control" value="<?php echo $opt1 ?>">
+                      <input type="text" name="iopt1" class="form-control" value="<?php echo $opt1 ?>">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Изменить вариант ответа-2</label>
-                      <input type="text" name="opt2" class="form-control" value="<?php echo $opt2 ?>">
+                      <input type="text" name="iopt2" class="form-control" value="<?php echo $opt2 ?>">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Изменить вариант ответа-3</label>
-                      <input type="text" name="opt3" class="form-control" value="<?php echo $opt3 ?>">
+                      <input type="text" name="iopt3" class="form-control" value="<?php echo $opt3 ?>">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Изменить вариант ответа-4</label>
-                      <input type="text" name="opt4" class="form-control" value="<?php echo $opt4 ?>">
+                      <input type="text" name="iopt4" class="form-control" value="<?php echo $opt4 ?>">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Изменить правильный ответ</label>
-                      <input type="text" name="answer" class="form-control" value="<?php echo $answer ?>">
+                      <input type="text" name="ianswer" class="form-control" value="<?php echo $answer ?>">
                     </div>
                     <div class="form-group">
-                      <input type="submit" name="submit1" value="Обновить" class="btn btn-success">
+                      <input type="submit" name="submit3" value="Обновить" class="btn btn-success">
                     </div>
                   </div>
                 </div>
@@ -83,8 +84,17 @@ while ($row = mysqli_fetch_array($res)) {
 </div>
 
 <?php
-if (isset($_POST["submit1"])) {
-  mysqli_query($link, "update questions set question='$_POST[question]',opt1='$_POST[opt1]',opt2='$_POST[opt2]',opt3='$_POST[opt3]',opt4='$_POST[opt4]',answer='$_POST[answer]' where id = $id ");
+if (isset($_POST["submit3"])) {
+  $question = $_FILES["iquestion"]["name"];
+
+  if ($question != "") {
+    $dst1 = "./opt_images/" . $question;
+    $dst_db1 = "opt_images/" . $question;
+    move_uploaded_file($_FILES["iquestion"]["tmp_name"], $dst1);
+    mysqli_query($link, "update questions set question='$dst_db1', opt1='$_POST[iopt1]',opt2='$_POST[iopt2]',opt3='$_POST[iopt3]',opt4='$_POST[iopt4]',answer='$_POST[ianswer]' where id = $id ") or die(mysqli_error($link));
+  }
+
+  mysqli_query($link, "update questions set opt1='$_POST[iopt1]',opt2='$_POST[iopt2]',opt3='$_POST[iopt3]',opt4='$_POST[iopt4]',answer='$_POST[ianswer]' where id = $id ") or die(mysqli_error($link));
 
 ?>
   <script>
