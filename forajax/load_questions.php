@@ -48,12 +48,11 @@ if ($count == 0) {
   <table>
     <tr>
       <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt1;  ?>">
-        <?php
-        if ($ans == $opt1) {
-          echo "checked";
-        }
-        ?>
+        <input type="radio" name="r1" id="r1" value="<?php echo $opt1;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
+                                                                                                                                        if ($ans == $opt1) {
+                                                                                                                                          echo "checked";
+                                                                                                                                        }
+                                                                                                                                        ?>>
       </td>
 
       <td style="padding-left: 10px">
@@ -64,6 +63,75 @@ if ($count == 0) {
         <?php
         } else {
           echo $opt1;
+        }
+        ?>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>
+        <input type="radio" name="r1" id="r1" value="<?php echo $opt2;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
+                                                                                                                                        if ($ans == $opt2) {
+                                                                                                                                          echo "checked";
+                                                                                                                                        }
+                                                                                                                                        ?>>
+      </td>
+
+      <td style="padding-left: 10px">
+        <?php
+        if (strpos($opt2, 'images/') !== false) {
+        ?>
+          <img src="admin/<?php echo $opt2; ?>" height="50" width="50">
+        <?php
+        } else {
+          echo $opt2;
+        }
+        ?>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>
+        <input type="radio" name="r1" id="r1" value="<?php echo $opt3;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
+                                                                                                                                        if ($ans == $opt3) {
+                                                                                                                                          echo "checked";
+                                                                                                                                        }
+                                                                                                                                        ?>>
+      </td>
+
+      <td style="padding-left: 10px">
+        <?php
+        if (strpos($opt3, 'images/') !== false) {
+        ?>
+          <img src="admin/<?php echo $opt3; ?>" height="50" width="50">
+        <?php
+        } else {
+          echo $opt3;
+        }
+        ?>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>
+        <input type="radio" name="r1" id="r1" value="<?php echo $opt4;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
+                                                                                                                                        if ($ans == $opt4) {
+                                                                                                                                          echo "checked";
+                                                                                                                                        }
+                                                                                                                                        ?>>
+      </td>
+
+      <td style="padding-left: 10px">
+        <?php
+        if (strpos($opt4, 'images/') !== false) {
+        ?>
+          <img src="admin/<?php echo $opt4; ?>" height="50" width="50">
+        <?php
+        } else {
+          echo $opt4;
         }
         ?>
       </td>

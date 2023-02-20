@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION["username"])) {
+?>
+  <script>
+    window.location = "login.php";
+  </script>
+<?php
+}
 include "header.php";
 ?>
 
@@ -69,6 +77,17 @@ include "header.php";
       }
     };
     xmlhttp.open("GET", "forajax/load_questions.php?questionno=" + questionno, true);
+    xmlhttp.send(null);
+  }
+
+  function radioclick(radiovalue, questionno) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+      }
+    };
+    xmlhttp.open("GET", "forajax/save_answer_in_session.php?questionno=" + questionno + "&value1=" + radiovalue, true);
     xmlhttp.send(null);
   }
 
