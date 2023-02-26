@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Panel</title>
+  <title>Админ Панель</title>
   <meta name="description" content="Admin Panel">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-icon.png">
@@ -28,7 +28,7 @@
           <i class="fa fa-bars"></i>
         </button>
         <a class="navbar-brand" href="./">
-          Admin Panel
+          Админ Панель
         </a>
         <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
       </div>

@@ -17,7 +17,7 @@ if (!isset($_SESSION["username"])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Online Quiz System</title>
+  <title>Тесты по английскому языку</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,7 +52,7 @@ if (!isset($_SESSION["username"])) {
                       <ul class="nav navbar-nav mai-top-nav">
                         <li class="nav-item"><a href="/select_exam.php" class="nav-link">Выбрать тест</a>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Последние результаты</a>
+                        <li class="nav-item"><a href="/old_exam_results.php" class="nav-link">Последние результаты</a>
                         </li>
                         <li class="nav-item"><a href="logout.php" class="nav-link">Выйти</a>
                         </li>

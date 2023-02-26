@@ -77,7 +77,7 @@ include "connection.php";
         <?php
         } else {
 
-            $_SESSION["username"]=$_POST["username"];
+            $_SESSION["username"] = $_POST["username"];
         ?>
             <script>
                 window.location = "select_exam.php";
