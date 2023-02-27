@@ -1,4 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION["admin"])) {
+?>
+  <script>
+    window.location = "index.php";
+  </script>
+<?php
+}
+
+
 include('header.php');
 include "../connection.php";
 ?>
@@ -6,7 +16,7 @@ include "../connection.php";
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Add Exam</h1>
+        <h1>Добавить категорию теста</h1>
       </div>
     </div>
   </div>
@@ -18,40 +28,40 @@ include "../connection.php";
         <div class="card">
           <form action="" name="form1" method="post">
             <div class="card-body">
-              <div class="col-lg-6">
+              <div class="col-lg-5">
                 <div class="card">
-                  <div class="card-header"><strong>Add Exam</strong></div>
+                  <div class="card-header"><strong>Добавить Категорию </strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">New Exam Category</label>
-                      <input type="text" name="examname" placeholder="Add Exam Category" class="form-control">
+                      <label class=" form-control-label">Новая Категория теста</label>
+                      <input type="text" name="examname" placeholder="Добавить категорию" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Exam Time</label>
-                      <input type="text" name="examtime" placeholder="Exam Time" class="form-control">
+                      <label class=" form-control-label">Время теста</label>
+                      <input type="text" name="examtime" placeholder="Добавить время" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <input type="submit" name="submit1" value="Add Exam" class="btn btn-success">
+                      <input type="submit" name="submit1" value="Добавить Тест" class="btn btn-success">
                     </div>
 
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-7">
                 <div class="card">
                   <div class="card-header">
-                    <strong class="card-title">Exam Category</strong>
+                    <strong class="card-title">Категория Теста</strong>
                   </div>
                   <div class="card-body">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">Exam Name</th>
-                          <th scope="col">Exam Time</th>
-                          <th scope="col">Edit</th>
-                          <th scope="col">Delete</th>
+                          <th scope="col">Название</th>
+                          <th scope="col">Время</th>
+                          <th scope="col">Изменить время</th>
+                          <th scope="col">Удалить</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -66,8 +76,8 @@ include "../connection.php";
                             <th scope="row"><?php echo $count ?></th>
                             <td><?php echo $row["category"]; ?></td>
                             <td><?php echo $row["exam_time"]; ?></td>
-                            <td><a href="edit_exam.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
-                            <td><a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
+                            <td><a href="edit_exam.php?id=<?php echo $row["id"]; ?>">Изменить</a></td>
+                            <td><a href="delete.php?id=<?php echo $row["id"]; ?>">Удалить</a></td>
                           </tr>
                         <?php
                         }

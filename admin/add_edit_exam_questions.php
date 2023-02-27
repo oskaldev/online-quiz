@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION["admin"])) {
+?>
+  <script>
+    window.location = "index.php";
+  </script>
+<?php
+}
+
 include('header.php');
 include "../connection.php";
 ?>
