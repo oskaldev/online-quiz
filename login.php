@@ -32,7 +32,7 @@ include "connection.php";
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>ВХОД</h3>
+                <h3>Вход</h3>
             </div>
             <div class="content-error">
                 <div class="hpanel">
