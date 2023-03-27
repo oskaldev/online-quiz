@@ -40,14 +40,13 @@ include "../connection.php";
             <form action="#" name="form1" method="post">
               <div class="row">
                 <div class="form-group col-lg-12">
-                  <label>Почта</label>
-                  <input type="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group col-lg-12">
                   <label>Пароль</label>
                   <input type="password" name="password" class="form-control" required>
                 </div>
-
+                <div class="form-group col-lg-12">
+                  <label>Почта</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
               </div>
               <div class="text-center">
                 <button type="submit" name="submit1" class="btn btn-success loginbtn">Зарегистрироваться</button>
@@ -87,7 +86,7 @@ include "../connection.php";
       </script>
     <?php
     } else {
-      mysqli_query($link, "insert into admin_login values(NULL, '$_POST[email]', '$password')") or die(mysqli_error($link));
+      mysqli_query($link, "insert into admin_login values(NULL, '$_POST[email]','$password')") or die(mysqli_error($link));
     ?>
       <script>
         document.getElementById("success").style.display = "block";
@@ -98,6 +97,18 @@ include "../connection.php";
   }
   ?>
 
+
+
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery-price-slider.js"></script>
+  <script src="js/jquery.meanmenu.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 
