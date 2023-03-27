@@ -1,31 +1,49 @@
-<h1 align="center">Welcome to online-quiz 👋</h1>
+# online-quiz
+
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/oskaldev/online-quiz#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://twitter.com/oskaldev" target="_blank">
-    <img alt="Twitter: oskaldev" src="https://img.shields.io/twitter/follow/oskaldev.svg?style=social" />
-  </a>
 </p>
 
-> сайт для тестирования (курсовой проект)
+`**online-quiz** - веб сайт для тестирования`
+> сделал систему тестирования на которой можно проходить разные тесты разного уровня по категориям. Так же присутствует админ панель для администратора.
 
+## Проект выполнен с использванием следующих языков и технологий:
+
+   > HTML / JS / CSS / PHP
+
+## Description
+В первой версии можно проходить разные тесты по разным темам , имеется своя админ панель в которой можно добавлять,удалять,изменять категории, тесты и всё что с ними связано, в дальнейшем можно добавить больше функционала и поменять дизайн
+
+## Usage
+- Заходим на главную страницу и проходим регистрацию:
 ### 🏠 [Homepage](http://f0777515.xsph.ru/)
-#### Проходим регистрацию
-#### После переносит на выбор теста
-#### Так же есть вывод результата после прохождение теста и в отдельной странице по всем пройденым тестам 
+<img src="https://user-images.githubusercontent.com/67880047/225964456-b7dcd851-e409-46c1-a3af-53acc2d4f835.png" width=50% height=50%>
 
-## online-quiz.
- 
-Проект выполнен с использванием следующих языков и технологий:
+- Дальше выбираем категорию и проходим по ней тест
 
-    HTML / JS / CSS / PHP
+<img src="https://user-images.githubusercontent.com/67880047/225965187-677eab9c-4d8b-4af0-9c60-38d84e4907c8.png" width=50% height=50%>
+
+- После выведет результат теста
+
+<img src="https://user-images.githubusercontent.com/67880047/225965337-717b4b4e-74c1-4950-91c9-018bfa765f93.png" width=50% height=50%>
+
+- Все результаты можно просмотреть во вкладке `Последние Результаты`
+
+<img src="https://user-images.githubusercontent.com/67880047/225965516-2043fa6c-80de-4fc0-b317-10f0a3be3e77.png" width=50% height=50%>
+
+* Админ панель
+
+<img src="https://user-images.githubusercontent.com/67880047/225966765-2fa90207-8d84-4693-9cfc-07b1b51613ce.png" width=50% height=50%>
+
 
 
 ## Install
 
-```sh
+from Github
+```Github
 git clone https://github.com/oskaldev/online-quiz.git
 ```
 
@@ -33,9 +51,9 @@ git clone https://github.com/oskaldev/online-quiz.git
 
 👤 **oskaldev**
 
-* Twitter: [@oskaldev](https://twitter.com/oskaldev)
 * Github: [@oskaldev](https://github.com/oskaldev)
 * LinkedIn: [@oskaldev](https://linkedin.com/in/oskaldev)
 * Telegram: [@oskaldev](https://t.me/oskaldev)
+
 
 
