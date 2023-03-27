@@ -89,7 +89,7 @@ include "../connection.php";
 if (isset($_POST["submit1"])) {
   $count = 0;
   $email = mysqli_real_escape_string($link, $_POST["email"]);
-  $password = mysqli_real_escape_string($link, $_POST["password"]);
+  $password = mysqli_real_escape_string($link, md5($_POST['password'] . "fghsgfsuh4321"));
 
   $res = mysqli_query($link, "select * from admin_login where email='$email' && password='$password' ");
   $count = mysqli_num_rows($res);
@@ -102,7 +102,7 @@ if (isset($_POST["submit1"])) {
     </script>
   <?php
   } else {
-    $_SESSION["admin"] = $username;
+    $_SESSION["admin"] = $email;
   ?>
     <script>
       window.location = "exam_category.php";
