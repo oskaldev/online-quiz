@@ -60,6 +60,10 @@ include "header.php";
       echo "дата";
       echo "</th>";
 
+      echo "<th>";
+      echo "баллы";
+      echo "</th>";
+
       echo "</tr>";
 
       while ($row = mysqli_fetch_array($res)) {
@@ -88,6 +92,10 @@ include "header.php";
 
         echo "<td>";
         echo $row["exam_time"];
+        echo "</td>";
+
+        echo "<td>";
+        echo $row["estimation"];
         echo "</td>";
 
         echo "</tr>";

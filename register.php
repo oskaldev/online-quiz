@@ -48,6 +48,18 @@ include "connection.php";
                   <input type="text" name="lastname" class="form-control">
                 </div>
                 <div class="form-group col-lg-12">
+                  <label for="pet-select">Ваша группа:</label>
+                  <select name="groups" id="pet-select" required>
+                    <option value="">--Пожалуйста выберете группу--</option>
+                    <option value="ПО-42">ПО-42</option>
+                    <option value="ПО-32">ПО-32</option>
+                    <option value="ПО-22">ПО-22</option>
+                    <option value="ПО-12">ПО-12</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group col-lg-12">
                   <label>Никнейм</label>
                   <input type="text" name="username" class="form-control" required>
                 </div>
@@ -71,7 +83,7 @@ include "connection.php";
               </div>
 
               <div class="alert alert-danger" id="failure" style="margin-top:10px; display: none;">
-                <strong>Уже существует!</strong> Эта почта уже используется !
+                <strong>Уже существует!</strong> Эта почта или никнейм уже используется !
               </div>
 
             </form>
@@ -87,7 +99,7 @@ include "connection.php";
   if (isset($_POST["submit1"])) {
     $password = md5($_POST['password'] . "fghsgfsuh4321");
     $count = 0;
-    $res = mysqli_query($link, "select * from registration where email='$_POST[email]'") or die(mysqli_error($link));
+    $res = mysqli_query($link, "select * from registration where email='$_POST[email]' || username='$_POST[username]' ") or die(mysqli_error($link));
     $count = mysqli_num_rows($res);
 
     if ($count > 0) {
@@ -98,7 +110,7 @@ include "connection.php";
       </script>
     <?php
     } else {
-      mysqli_query($link, "insert into registration values(NULL, '$_POST[firstname]','$_POST[lastname]','$_POST[username]','$password','$_POST[email]')") or die(mysqli_error($link));
+      mysqli_query($link, "insert into registration values(NULL, '$_POST[firstname]','$_POST[lastname]','$_POST[username]','$password','$_POST[email]', '$_POST[groups]')") or die(mysqli_error($link));
     ?>
       <script>
         document.getElementById("success").style.display = "block";

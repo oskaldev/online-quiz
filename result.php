@@ -45,15 +45,20 @@ include "header.php";
     $res = mysqli_query($link, "select * from questions where category='$_SESSION[exam_category]'");
     $count = mysqli_num_rows($res);
     $wrong = $count - $correct;
+    $estimation = $correct / $count * 100;
     echo "<br>";
     echo "<br>";
     echo "<center>";
-    echo "Всего вопросов=" . $count;
+    echo "Всего вопросов =" . $count;
     echo "<br>";
-    echo "Правильных ответов=" . $correct;
+    echo "Правильных ответов =" . $correct;
     echo "<br>";
-    echo "Не правильных ответов=" . $wrong;
+    echo "Не правильных ответов =" . $wrong;
+    echo "<br>";
+    echo "Баллы =" . $estimation;
     echo "</center>";
+
+    echo "Баллы считаются по 100 бальной шкале ,где ниже 69баллов оценка - 2, 70-79баллов оценка - 3,80-89баллов оценка - 4, 90-100баллов оценка - 5";
     ?>
   </div>
 
@@ -63,7 +68,7 @@ include "header.php";
 <?php
 if (isset($_SESSION["exam_start"])) {
   $date = date("Y-m-d");
-  mysqli_query($link, "insert into exam_results (id, username, exam_type, total_question, correct_answer, wrong_answer, exam_time) values(NULL, '$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date') ") or die(mysqli_error($link));
+  mysqli_query($link, "insert into exam_results (id, username, exam_type, total_question, correct_answer, wrong_answer, exam_time, estimation) values(NULL, '$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date', '$estimation') ") or die(mysqli_error($link));
 }
 
 if (isset($_SESSION["exam_start"])) {

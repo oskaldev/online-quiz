@@ -54,6 +54,10 @@ include "../connection.php";
               echo "</th>";
 
               echo "<th>";
+              echo "группа";
+              echo "</th>";
+
+              echo "<th>";
               echo "почта";
               echo "</th>";
 
@@ -76,6 +80,10 @@ include "../connection.php";
 
                 echo "<td>";
                 echo $row["lastname"];
+                echo "</td>";
+
+                echo "<td>";
+                echo $row["groups"];
                 echo "</td>";
 
                 echo "<td>";
