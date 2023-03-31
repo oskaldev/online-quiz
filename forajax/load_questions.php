@@ -48,11 +48,11 @@ if ($count == 0) {
   <table>
     <tr>
       <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt1;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
-                                                                                                                                        if ($ans == $opt1) {
-                                                                                                                                          echo "checked";
-                                                                                                                                        }
-                                                                                                                                        ?>>
+        <input type="radio" name="r1" id="r1" value="<?php echo $opt1;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" 
+        <?php if ($ans == $opt1) {
+          echo "checked";
+          }
+        ?>>
       </td>
 
       <td style="padding-left: 10px">

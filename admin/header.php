@@ -44,6 +44,9 @@
             <a href="old_exam_results.php"> <i class="menu-icon fa fa-dashboard"></i>Результаты тестов</a>
           </li>
           <li>
+            <a href="users.php"> <i class="menu-icon fa fa-dashboard"></i>Список пользователей</a>
+          </li>
+          <li>
             <a href="logout.php"> <i class="menu-icon fa fa-close"></i>Выйти из аккаунта</a>
           </li>
         </ul>

@@ -14,7 +14,7 @@ include "../connection.php";
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Результаты тестов</h1>
+        <h1>Список пользователей</h1>
       </div>
     </div>
   </div>
@@ -26,18 +26,15 @@ include "../connection.php";
         <div class="card">
           <div class="card-body">
 
-            <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
-
-
             <?php
             $count = 0;
-            $res = mysqli_query($link, "select * from exam_results  order by id desc ");
+            $res = mysqli_query($link, "select * from registration  order by id desc ");
             $count = mysqli_num_rows($res);
 
             if ($count == 0) {
             ?>
               <center>
-                <h1>Результаты не найдены</h1>
+                <h1> Список пользователей на данный момент пуст</h1>
               </center>
             <?php
             } else {
@@ -49,25 +46,20 @@ include "../connection.php";
               echo "</th>";
 
               echo "<th>";
-              echo "категория экзамена";
+              echo "имя";
               echo "</th>";
 
               echo "<th>";
-              echo "всего вопросов";
+              echo "фамилия";
               echo "</th>";
 
               echo "<th>";
-              echo "правильные ответы";
+              echo "почта";
               echo "</th>";
 
               echo "<th>";
-              echo "не правильные ответы";
+              echo "";
               echo "</th>";
-
-              echo "<th>";
-              echo "дата";
-              echo "</th>";
-
               echo "</tr>";
 
               while ($row = mysqli_fetch_array($res)) {
@@ -79,23 +71,21 @@ include "../connection.php";
                 echo "</td>";
 
                 echo "<td>";
-                echo $row["exam_type"];
+                echo $row["firstname"];
                 echo "</td>";
 
                 echo "<td>";
-                echo $row["total_question"];
+                echo $row["lastname"];
                 echo "</td>";
 
                 echo "<td>";
-                echo $row["correct_answer"];
+                echo $row["email"];
                 echo "</td>";
 
                 echo "<td>";
-                echo $row["wrong_answer"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["exam_time"];
+                echo "<a href=delete_users.php?id=".$row["id"]."&amp;action=delete>";
+                echo "удалить";
+                echo "</a>";
                 echo "</td>";
 
                 echo "</tr>";
@@ -104,6 +94,7 @@ include "../connection.php";
             }
 
             ?>
+            <td></td>
           </div>
         </div>
       </div>

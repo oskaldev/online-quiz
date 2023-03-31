@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 session_start();
 include "connection.php";
@@ -101,7 +101,6 @@ include "connection.php";
 
 </body>
 
-=======
 <?php
 session_start();
 include "connection.php";
@@ -203,6 +202,4 @@ include "connection.php";
 
 
 </body>
-
->>>>>>> ba97e166e3a601eb3b579afc13d6e8b554b1af0b
 </html>
