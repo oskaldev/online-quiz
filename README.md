@@ -34,6 +34,8 @@
 
 <img src="https://user-images.githubusercontent.com/67880047/225965516-2043fa6c-80de-4fc0-b317-10f0a3be3e77.png" width=50% height=50%>
 
+<img src="https://user-images.githubusercontent.com/67880047/229306484-1179912d-cf0f-4c09-848e-9ce18c41585a.png" width=50% height=50%>
+
 * Админ панель
 
 <img src="https://user-images.githubusercontent.com/67880047/225966765-2fa90207-8d84-4693-9cfc-07b1b51613ce.png" width=50% height=50%>
