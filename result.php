@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "connection.php";
 $date = date('Y-m-d H:i:s');
 $_SESSION["end_time"] = date('Y-m-d H:i:s', strtotime($date . " + $_SESSION[exam_time] minutes"));
 
@@ -11,12 +10,13 @@ if (!isset($_SESSION["username"])) {
   </script>
 <?php
 }
+include "auth.php";
+include "connection.php";
 include "header.php";
 ?>
 
 
 <div class="row" style="margin: 0px; padding:0px; margin-bottom: 50px;">
-
   <div class="col-lg-6 col-lg-push-3" style="min-height: 500px; background-color: white;">
     <?php
     $correct = 0;
@@ -57,9 +57,9 @@ include "header.php";
     echo "<br>";
     echo "Баллы =" . $estimation;
     echo "</center>";
-
     echo "Баллы считаются по 100 бальной шкале ,где ниже 69баллов оценка - 2, 70-79баллов оценка - 3,80-89баллов оценка - 4, 90-100баллов оценка - 5";
     ?>
+
   </div>
 
 </div>

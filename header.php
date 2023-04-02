@@ -90,7 +90,7 @@ if (!isset($_SESSION["username"])) {
                             </li>
                             <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                             </li> -->
-                            <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
+                            <li><a href="login.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
                             </li>
                           </ul>
                         </li>

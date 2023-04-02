@@ -7,6 +7,9 @@ if (!isset($_SESSION["admin"])) {
   </script>
 <?php
 }
+$_SESSION["last_activity"] = time();
+
+include "auth.php";
 include('header.php');
 include "../connection.php";
 ?>
@@ -28,6 +31,22 @@ include "../connection.php";
 
             <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
 
+            <div class="col-md-6">
+              <h2 style='padding-bottom:10px;' class="center">Export</h2>
+              <form style='padding-bottom:50px;' method="POST" action="../excel.php">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- <select name="export_file_type" class="form-control" required>
+              <option value="">Пожалуйста выберете формат</option>
+              <option value="xlsx">xlsx</option>
+              <option value="xls">xls</option>
+              <option value="csv">csv</option>
+            </select> -->
+                  </div>
+                </div>
+                <input type="submit" name="export_btn_admin" class="btn btn-success" value="Export">
+              </form>
+            </div>
 
             <?php
             $count = 0;
@@ -112,6 +131,7 @@ include "../connection.php";
             }
 
             ?>
+
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@ include "connection.php";
   <?php
 
   if (isset($_POST["submit1"])) {
-    $password = md5($_POST['password'] . "fghsgfsuh4321");
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $count = 0;
     $res = mysqli_query($link, "select * from registration where email='$_POST[email]' || username='$_POST[username]' ") or die(mysqli_error($link));
     $count = mysqli_num_rows($res);
@@ -120,6 +120,7 @@ include "connection.php";
     }
   }
   ?>
+
 
 
 

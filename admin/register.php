@@ -52,7 +52,7 @@ include "../connection.php";
                 <button type="submit" name="submit1" class="btn btn-success loginbtn">Зарегистрироваться</button>
               </div>
               <div class="text-center">
-                <a href="login.php" class="btn btn-success loginbtn">Войти</a>
+                <a href="index.php" class="btn btn-success loginbtn">Войти</a>
               </div>
               <div class="alert alert-success" id="success" style="margin-top:10px; display: none;">
                 <strong>Успех!</strong> Аккаунт успешно зарегистрирован !
@@ -73,7 +73,7 @@ include "../connection.php";
   <?php
 
   if (isset($_POST["submit1"])) {
-    $password = md5($_POST['password'] . "fghsgfsuh4321");
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $count = 0;
     $res = mysqli_query($link, "select * from admin_login where email='$_POST[email]'") or die(mysqli_error($link));
     $count = mysqli_num_rows($res);

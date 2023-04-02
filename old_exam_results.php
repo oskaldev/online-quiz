@@ -8,8 +8,7 @@ if (!isset($_SESSION["username"])) {
   </script>
 <?php
 }
-
-
+include "auth.php";
 include "header.php";
 ?>
 
@@ -17,6 +16,7 @@ include "header.php";
 <div class="row" style="margin: 0px; padding:0px; margin-bottom: 50px;">
 
   <div class="col-lg-8 col-lg-push-2" style="min-height: 500px; background-color: white;border: 1px solid;">
+
     <center>
       <h1>Результаты тестов</h1>
     </center>
@@ -104,7 +104,25 @@ include "header.php";
     }
 
     ?>
+    <div class="col-md-6">
+      <h2 class="center">Export</h2>
+      <form method="POST" action="excel.php">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <select name="export_file_type" class="form-control" required>
+              <option value="">Пожалуйста выберете формат</option>
+              <option value="xlsx">xlsx</option>
+              <option value="xls">xls</option>
+              <option value="csv">csv</option>
+            </select> -->
+          </div>
+        </div>
+        <input type="submit" name="export_btn" class="btn btn-success" value="Export">
+      </form>
+    </div>
   </div>
+
+</div>
 
 </div>
 

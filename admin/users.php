@@ -7,6 +7,9 @@ if (!isset($_SESSION["admin"])) {
   </script>
 <?php
 }
+$_SESSION["last_activity"] = time();
+
+include "auth.php";
 include('header.php');
 include "../connection.php";
 ?>
@@ -91,7 +94,7 @@ include "../connection.php";
                 echo "</td>";
 
                 echo "<td>";
-                echo "<a href=delete_users.php?id=".$row["id"]."&amp;action=delete>";
+                echo "<a href=delete_users.php?id=" . $row["id"] . "&amp;action=delete>";
                 echo "удалить";
                 echo "</a>";
                 echo "</td>";
@@ -103,6 +106,22 @@ include "../connection.php";
 
             ?>
             <td></td>
+            <div class="col-md-6">
+              <h2 class="center">Export</h2>
+              <form method="POST" action="excel.php">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- <select name="export_file_type" class="form-control" required>
+              <option value="">Пожалуйста выберете формат</option>
+              <option value="xlsx">xlsx</option>
+              <option value="xls">xls</option>
+              <option value="csv">csv</option>
+                    </select> -->
+                  </div>
+                </div>
+                <input type="submit" name="export_btn" class="btn btn-success" value="Export">
+              </form>
+            </div>
           </div>
         </div>
       </div>

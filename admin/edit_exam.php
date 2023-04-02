@@ -7,6 +7,9 @@ if (!isset($_SESSION["admin"])) {
   </script>
 <?php
 }
+$_SESSION["last_activity"] = time();
+
+include "auth.php";
 include('header.php');
 include "../connection.php";
 

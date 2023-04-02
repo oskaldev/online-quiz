@@ -85,27 +85,26 @@ include "../connection.php";
 
 </html>
 
+
+
 <?php
 if (isset($_POST["submit1"])) {
+  $password = $_POST['password'];
   $count = 0;
-  $email = mysqli_real_escape_string($link, $_POST["email"]);
-  $password = mysqli_real_escape_string($link, md5($_POST['password'] . "fghsgfsuh4321"));
+  $res = mysqli_query($link, "select * from admin_login where email='$_POST[email]' ");
+  $admin = mysqli_fetch_assoc($res);
 
-  $res = mysqli_query($link, "select * from admin_login where email='$email' && password='$password' ");
-  $count = mysqli_num_rows($res);
-
-
-  if ($count == 0) {
+  if (password_verify($password, $admin['password'])) {
+    $_SESSION["admin"] = $_POST["email"];
 ?>
     <script>
-      document.getElementById("errormsg").style.display = "block";
+      window.location = "exam_category.php";
     </script>
   <?php
   } else {
-    $_SESSION["admin"] = $email;
   ?>
     <script>
-      window.location = "exam_category.php";
+      document.getElementById("errormsg").style.display = "block";
     </script>
 <?php
   }

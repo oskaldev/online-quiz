@@ -1,14 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION["username"])) {
-?>
-  <script>
-    window.location = "login.php";
-  </script>
-<?php
+  header("Location: login.php");
+  exit();
 }
 ?>
 <?php
+include "auth.php";
 include "connection.php";
 include "header.php";
 ?>

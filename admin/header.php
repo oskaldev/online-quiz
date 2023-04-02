@@ -47,7 +47,7 @@
             <a href="users.php"> <i class="menu-icon fa fa-dashboard"></i>Список пользователей</a>
           </li>
           <li>
-            <a href="logout.php"> <i class="menu-icon fa fa-close"></i>Выйти из аккаунта</a>
+            <a href="index.php"> <i class="menu-icon fa fa-close"></i>Выйти из аккаунта</a>
           </li>
         </ul>
       </div>

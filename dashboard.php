@@ -7,6 +7,7 @@ if (!isset($_SESSION["username"])) {
   </script>
 <?php
 }
+
 include "header.php";
 ?>
 
