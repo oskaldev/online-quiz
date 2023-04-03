@@ -1,15 +1,5 @@
 <?php
-session_start();
-include "connection.php";
-if (!isset($_SESSION["username"])) {
-?>
-  <script>
-    window.location = "login.php";
-  </script>
-<?php
-}
-include "auth.php";
-include "header.php";
+require_once "header.php";
 ?>
 
 

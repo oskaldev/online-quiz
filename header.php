@@ -7,7 +7,12 @@ if (!isset($_SESSION["username"])) {
   </script>
 <?php
 }
+if (isset($_SESSION["last_activity"])) {  
+  $_SESSION["last_activity"] = time();
+}
 
+require_once "auth.php";
+require_once "connection.php";
 ?>
 
 

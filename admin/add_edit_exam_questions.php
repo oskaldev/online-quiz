@@ -1,17 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION["admin"])) {
-?>
-  <script>
-    window.location = "index.php";
-  </script>
-<?php
-}
-$_SESSION["last_activity"] = time();
-
-include "auth.php";
-include('header.php');
-include "../connection.php";
+require_once "header.php";
 ?>
 <div class="breadcrumbs">
   <div class="col-sm-12">

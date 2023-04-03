@@ -1,17 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION["admin"])) {
-?>
-  <script>
-    window.location = "index.php";
-  </script>
-<?php
-}
-$_SESSION["last_activity"] = time();
-
-include "auth.php";
-include('header.php');
-include "../connection.php";
+require_once "header.php";
 ?>
 <div class="breadcrumbs">
   <div class="col-sm-4">
@@ -33,7 +21,7 @@ include "../connection.php";
 
             <div class="col-md-6">
               <h2 style='padding-bottom:10px;' class="center">Export</h2>
-              <form style='padding-bottom:50px;' method="POST" action="../excel.php">
+              <form style='padding-bottom:50px;' method="POST" action="excel.php">
                 <div class="row">
                   <div class="col-md-6">
                     <!-- <select name="export_file_type" class="form-control" required>

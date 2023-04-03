@@ -1,3 +1,20 @@
+<?php
+session_start();
+if (!isset($_SESSION["admin"])) {
+?>
+  <script>
+    window.location = "index.php";
+  </script>
+<?php
+}
+if (isset($_SESSION["last_activity"])) {
+  $_SESSION["last_activity"] = time();
+}
+
+require_once "auth.php";
+require_once "../connection.php";
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 

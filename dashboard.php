@@ -1,14 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION["username"])) {
-?>
-  <script>
-    window.location = "login.php";
-  </script>
-<?php
-}
-
-include "header.php";
+require_once "header.php";
 ?>
 
 

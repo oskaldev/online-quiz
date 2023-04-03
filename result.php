@@ -1,18 +1,7 @@
 <?php
-session_start();
+require_once "header.php";
 $date = date('Y-m-d H:i:s');
 $_SESSION["end_time"] = date('Y-m-d H:i:s', strtotime($date . " + $_SESSION[exam_time] minutes"));
-
-if (!isset($_SESSION["username"])) {
-?>
-  <script>
-    window.location = "login.php";
-  </script>
-<?php
-}
-include "auth.php";
-include "connection.php";
-include "header.php";
 ?>
 
 
