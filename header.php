@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
   </script>
 <?php
 }
-if (isset($_SESSION["last_activity"])) {  
+if (isset($_SESSION["last_activity"])) {
   $_SESSION["last_activity"] = time();
 }
 
@@ -83,8 +83,7 @@ require_once "connection.php";
                         <li class="nav-item">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                             <img src="img/avatar-mini2.jpg" alt="" />
-                            <span class="admin-name"><?php echo $_SESSION["username"]; ?></span>
-                            <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+
                           </a>
                           <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                             <!-- <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
@@ -95,7 +94,7 @@ require_once "connection.php";
                             </li>
                             <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
                             </li> -->
-                            <li><a href="login.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
+                            <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
                             </li>
                           </ul>
                         </li>
