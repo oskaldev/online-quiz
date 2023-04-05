@@ -2,7 +2,7 @@
 session_start();
 
 // установить время жизни сессии в 50 минут
-$session_lifetime = 20;
+$session_lifetime = 2000;
 ini_set('session.gc_maxlifetime', $session_lifetime);
 session_set_cookie_params($session_lifetime);
 
@@ -29,7 +29,7 @@ if (isset($_COOKIE[session_name()])) {
 }
 
 // обновляем идентификатор сессии каждые 25 минут
-if (isset($_SESSION["last_regenerate"]) && (time() - $_SESSION["last_regenerate"] > 10)) {
+if (isset($_SESSION["last_regenerate"]) && (time() - $_SESSION["last_regenerate"] > 1000)) {
   session_regenerate_id(true);
   $_SESSION["last_regenerate"] = time();
 } else if (!isset($_SESSION["last_regenerate"])) {

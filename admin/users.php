@@ -17,6 +17,23 @@ require_once "header.php";
         <div class="card">
           <div class="card-body">
 
+            <div class="col-md-6">
+              <h2 style='padding-bottom:10px;' class="center">Export</h2>
+              <form style='padding-bottom:50px;' method="POST" action="excel.php">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- <select name="export_file_type" class="form-control" required>
+              <option value="">Пожалуйста выберете формат</option>
+              <option value="xlsx">xlsx</option>
+              <option value="xls">xls</option>
+              <option value="csv">csv</option>
+                    </select> -->
+                  </div>
+                </div>
+                <input type="submit" name="export_users_btn_admin" class="btn btn-success" value="Export XLS">
+                <input type="submit" name="export_users_csv_admin" class="btn btn-success" value="Export CSV">
+              </form>
+            </div>
             <?php
             $count = 0;
             $res = mysqli_query($link, "select * from registration  order by id desc ");
@@ -24,9 +41,7 @@ require_once "header.php";
 
             if ($count == 0) {
             ?>
-              <center>
-                <h1> Список пользователей на данный момент пуст</h1>
-              </center>
+              <h2 style='text-align:center; padding-bottom:50px;'> Список пользователей на данный момент пуст</h2>
             <?php
             } else {
               echo "<table class='table table-bordered'>";
@@ -94,22 +109,7 @@ require_once "header.php";
 
             ?>
             <td></td>
-            <div class="col-md-6">
-              <h2 class="center">Export</h2>
-              <form method="POST" action="excel.php">
-                <div class="row">
-                  <div class="col-md-6">
-                    <!-- <select name="export_file_type" class="form-control" required>
-              <option value="">Пожалуйста выберете формат</option>
-              <option value="xlsx">xlsx</option>
-              <option value="xls">xls</option>
-              <option value="csv">csv</option>
-                    </select> -->
-                  </div>
-                </div>
-                <input type="submit" name="export_btn" class="btn btn-success" value="Export">
-              </form>
-            </div>
+
           </div>
         </div>
       </div>

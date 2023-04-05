@@ -7,9 +7,25 @@ require_once "header.php";
 
   <div class="col-lg-8 col-lg-push-2" style="min-height: 500px; background-color: white;border: 1px solid;">
 
-    <center>
-      <h1>Результаты тестов</h1>
-    </center>
+    <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
+
+    <div class="col-md-6">
+      <h2 class="center">Export</h2>
+      <form style='padding-bottom:50px;' method="POST" action="excel.php">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <select name="export_file_type" class="form-control" required>
+              <option value="">Пожалуйста выберете формат</option>
+              <option value="xlsx">xlsx</option>
+              <option value="xls">xls</option>
+              <option value="csv">csv</option>
+            </select> -->
+          </div>
+        </div>
+        <input type="submit" name="export_btn" class="btn btn-success" value="Export XLS">
+        <input type="submit" name="export_csv" class="btn btn-success" value="Export CSV">
+      </form>
+    </div>
 
     <?php
     $count = 0;
@@ -94,22 +110,7 @@ require_once "header.php";
     }
 
     ?>
-    <div class="col-md-6">
-      <h2 class="center">Export</h2>
-      <form method="POST" action="excel.php">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- <select name="export_file_type" class="form-control" required>
-              <option value="">Пожалуйста выберете формат</option>
-              <option value="xlsx">xlsx</option>
-              <option value="xls">xls</option>
-              <option value="csv">csv</option>
-            </select> -->
-          </div>
-        </div>
-        <input type="submit" name="export_btn" class="btn btn-success" value="Export">
-      </form>
-    </div>
+
   </div>
 
 </div>

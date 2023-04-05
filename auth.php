@@ -29,7 +29,7 @@ if (isset($_COOKIE[session_name()])) {
 }
 
 // обновляем идентификатор сессии каждые 5 минут
-if (isset($_SESSION["last_regenerate"]) && (time() - $_SESSION["last_regenerate"] > 3000)) {
+if (isset($_SESSION["last_regenerate"]) && (time() - $_SESSION["last_regenerate"] > 1000)) {
   session_regenerate_id(true);
   $_SESSION["last_regenerate"] = time();
 } else if (!isset($_SESSION["last_regenerate"])) {

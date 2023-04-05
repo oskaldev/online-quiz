@@ -97,15 +97,40 @@ include "connection.php";
   <?php
 
   if (isset($_POST["submit1"])) {
+    // Проверяем формат email
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  ?>
+      <script>
+        document.getElementById("success").style.display = "none";
+        document.getElementById("failure").innerHTML = "Некорректный формат почты";
+        document.getElementById("failure").style.display = "block";
+      </script>
+    <?php
+      exit();
+    }
+
+    // Используем SMTP-проверку, чтобы убедиться, что почта существует
+    if (!checkdnsrr(explode("@", $_POST['email'])[1], "MX")) {
+    ?>
+      <script>
+        document.getElementById("success").style.display = "none";
+        document.getElementById("failure").innerHTML = "Почта не существует";
+        document.getElementById("failure").style.display = "block";
+      </script>
+    <?php
+      exit();
+    }
+
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $count = 0;
     $res = mysqli_query($link, "select * from registration where email='$_POST[email]' || username='$_POST[username]' ") or die(mysqli_error($link));
     $count = mysqli_num_rows($res);
 
     if ($count > 0) {
-  ?>
+    ?>
       <script>
         document.getElementById("success").style.display = "none";
+        document.getElementById("failure").innerHTML = "Пользователь с такой почтой или именем пользователя уже существует";
         document.getElementById("failure").style.display = "block";
       </script>
     <?php
@@ -120,6 +145,7 @@ include "connection.php";
     }
   }
   ?>
+
 
 
 

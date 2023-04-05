@@ -32,7 +32,9 @@ require_once "header.php";
             </select> -->
                   </div>
                 </div>
-                <input type="submit" name="export_btn_admin" class="btn btn-success" value="Export">
+                <input type="submit" name="export_btn_admin" class="btn btn-success" value="Export XLS">
+                <input type="submit" name="export_csv_admin" class="btn btn-success" value="Export CSV">
+
               </form>
             </div>
 
