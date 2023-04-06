@@ -28,7 +28,7 @@
 
 - После выведет результат теста
 
-<img src="https://user-images.githubusercontent.com/67880047/225965337-717b4b4e-74c1-4950-91c9-018bfa765f93.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/67880047/230239460-935d539b-7c44-43e8-bcbb-ac4a9c6fb500.png" width=50% height=50%>
 
 - Все результаты можно просмотреть во вкладке `Последние Результаты`
 
