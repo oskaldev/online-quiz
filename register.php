@@ -94,6 +94,49 @@ include "connection.php";
     </div>
   </div>
 
+
+  <!-- <section class="authoriz">
+    <div class="container">
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <label class="reg" for="chk" aria-hidden="true"><a href="register.php">Зарегистрироваться</a></label>
+        <div class="signup2"></div>
+        <div class="signup">
+                    <form>
+                        <label class="reg" for="chk" aria-hidden="true">Зарегистрироваться</label>
+                        <input type="text" name="firstname" placeholder="Имя" required>
+                        <input type="text" name="lastname" placeholder="Фамилия" required>
+                        <div class="form-group col-lg-12">
+                            <select name="groups" id="pet-select" required>
+                                <option value="">--Пожалуйста выберете группу--</option>
+                                <option value="ПО-42">ПО-42</option>
+                                <option value="ПО-32">ПО-32</option>
+                                <option value="ПО-22">ПО-22</option>
+                                <option value="ПО-12">ПО-12</option>
+                            </select>
+                        </div>
+                        <input type="text" name="username" placeholder="Никнейм" required>
+                        <input type="password" name="password" placeholder="Пароль" required>
+                        <input type="email" name="email" placeholder="Почта" required>
+                        <button type="submit" name="register">Зарегистрироваться</button>
+                    </form>
+                </div>
+
+        <div class="login">
+          <form name="form1" method="post" class="form1">
+            <label class="log" for="chk" aria-hidden="true">Вход</label>
+            <input type="text" placeholder="Ваш никнейм" title="Пожалуйста напишите ваш никнейм" name="username" required>
+            <input type="password" title="Введите пароль" placeholder="Пароль" name="password" required>
+            <button type="submit" name="login" class="">Войти</button>
+            <div class="alert alert-danger" id="failure" style="margin-top:10px; display: none;">
+              <strong>Не совпадает!</strong> Проверьте правильность ввода никнейма или пароля !
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
   <?php
 
   if (isset($_POST["submit1"])) {

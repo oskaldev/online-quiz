@@ -1,0 +1,9 @@
+{
+  "scripts": {
+  "start": "gulp serve"
+},
+  "devDependencies": {
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2"
+  }
+}
