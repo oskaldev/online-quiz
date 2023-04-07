@@ -71,6 +71,33 @@ h6 {
 }
 /*--------------------*/
 
+select {
+  -webkit-appearance: button !important;
+  -moz-appearance: button !important;
+  appearance: button !important;
+  cursor: pointer;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid #171438;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  justify-content: center;
+  margin: 0 auto;
+}
+option {
+  cursor: pointer;
+}
+select:focus {
+  border-radius: inherit;
+}
+
 .authoriz {
   margin: 0;
   padding: 0;
@@ -90,6 +117,9 @@ h6 {
   background: url('') no-repeat center/ cover;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
+}
+.main-reg {
+  height: 700px;
 }
 .form1 {
   display: flex;
@@ -114,7 +144,6 @@ label {
   display: flex;
   margin: 50px;
   font-weight: bold;
-  cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 label > a {
@@ -142,6 +171,9 @@ input {
   outline: none;
   border-radius: 5px;
 }
+.reg-input {
+  margin: 10px auto;
+}
 button {
   width: 60%;
   height: 40px;
@@ -162,8 +194,8 @@ button {
 button:hover {
   background: #6d44b8;
 }
+
 .login {
-  margin-top: 400px;
   height: 460px;
   background: #eee;
   border-radius: 60% / 10%;
@@ -172,21 +204,17 @@ button:hover {
 }
 .login label {
   color: #573b8a;
-  transform: scale(0.6);
 }
-
-#chk:checked ~ .login {
-  transform: translateY(-590px);
-}
-#chk:checked ~ .login label {
-  transform: scale(1);
+.register {
+  height: 525px;
+  transform: translateY(-200px);
 }
 #chk:checked ~ .signup label {
   transform: scale(0.6);
 }
 
 #failure {
-  display: none;
+  display: block;
   width: 90%;
   text-align: center;
   margin: 0 auto;
