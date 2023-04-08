@@ -27,7 +27,7 @@ require_once "login_register_process.php";
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="login_register_process.css">
+  <link rel="stylesheet" href="css/login_register_process.css">
 </head>
 
 <body>

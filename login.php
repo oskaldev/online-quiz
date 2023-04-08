@@ -27,7 +27,7 @@ require_once "login_register_process.php";
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css"> -->
-    <link rel="stylesheet" href="login_register_process.css">
+    <link rel="stylesheet" href="css/login_register_process.css">
 </head>
 
 <body>
