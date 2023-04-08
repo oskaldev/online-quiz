@@ -35,8 +35,13 @@ require_once "header.php";
               </form>
             </div>
             <?php
-            $count = 0;
-            $res = mysqli_query($link, "select * from registration  order by id desc ");
+
+            if (isset($_POST['delete'])) {
+              foreach ($_POST['user_ids'] as $id) {
+                mysqli_query($link, "DELETE FROM registration WHERE id='$id'");
+              }
+            }
+            $res = mysqli_query($link, "SELECT * FROM registration");
             $count = mysqli_num_rows($res);
 
             if ($count == 0) {
@@ -44,68 +49,38 @@ require_once "header.php";
               <h2 style='text-align:center; padding-bottom:50px;'> Список пользователей на данный момент пуст</h2>
             <?php
             } else {
+
+              echo "<form method='post'>";
+              echo "<td colspan='6'><button type='submit' class='btn btn-success' name='delete'>Удалить выбранных пользователей</button></td>";
               echo "<table class='table table-bordered'>";
-              echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'>  ";
-
-              echo "<th>";
-              echo "никнейм";
-              echo "</th>";
-
-              echo "<th>";
-              echo "имя";
-              echo "</th>";
-
-              echo "<th>";
-              echo "фамилия";
-              echo "</th>";
-
-              echo "<th>";
-              echo "группа";
-              echo "</th>";
-
-              echo "<th>";
-              echo "почта";
-              echo "</th>";
-
-              echo "<th>";
-              echo "";
-              echo "</th>";
+              echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'> ";
+              echo "<th></th>";
+              echo "<th>никнейм</th>";
+              echo "<th>имя</th>";
+              echo "<th>фамилия</th>";
+              echo "<th>группа</th>";
+              echo "<th>почта</th>";
               echo "</tr>";
 
               while ($row = mysqli_fetch_array($res)) {
-
                 echo "<tr>";
-
-                echo "<td>";
-                echo $row["username"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["firstname"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["lastname"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["groups"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["email"];
-                echo "</td>";
-
-                echo "<td>";
-                echo "<a href=delete_users.php?id=" . $row["id"] . "&amp;action=delete>";
-                echo "удалить";
-                echo "</a>";
-                echo "</td>";
-
+                echo "<td><input type='checkbox' name='user_ids[]' value='" . $row["id"] . "'></td>";
+                echo "<td>" . $row["username"] . "</td>";
+                echo "<td>" . $row["firstname"] . "</td>";
+                echo "<td>" . $row["lastname"] . "</td>";
+                echo "<td>" . $row["groups"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
                 echo "</tr>";
               }
+
+              echo "<tr>";
+              echo "<td colspan='6'><button type='submit' class='btn btn-success' name='delete'>Удалить выбранных пользователей</button></td>";
+              echo "</tr>";
+
               echo "</table>";
+              echo "</form>";
             }
+
 
             ?>
             <td></td>

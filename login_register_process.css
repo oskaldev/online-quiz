@@ -219,3 +219,7 @@ button:hover {
   text-align: center;
   margin: 0 auto;
 }
+#success {
+  display: block;
+  text-align: center;
+}
