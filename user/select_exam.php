@@ -1,4 +1,3 @@
-
 <?php
 require_once "header.php";
 ?>
@@ -31,7 +30,7 @@ include "footer.php";
         window.location = "dashboard.php";
       }
     };
-    xmlhttp.open("GET", "forajax/set_exam_type_session.php?exam_category=" + exam_category, true);
+    xmlhttp.open("GET", "../forajax/set_exam_type_session.php?exam_category=" + exam_category, true);
     xmlhttp.send(null);
   };
 </script>

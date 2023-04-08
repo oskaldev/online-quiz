@@ -9,5 +9,5 @@ if (isset($_SESSION["username"])) {
 }
 
 // перенаправляем на страницу логина
-header("Location: index.php");
+header("Location: login.php");
 exit();

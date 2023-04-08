@@ -12,7 +12,7 @@ if (isset($_SESSION["last_activity"])) {
 }
 
 require_once "auth.php";
-require_once "connection.php";
+require_once "../connection.php";
 ?>
 
 
@@ -55,9 +55,9 @@ require_once "connection.php";
                   <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                     <div class="header-top-menu tabl-d-n">
                       <ul class="nav navbar-nav mai-top-nav">
-                        <li class="nav-item"><a href="/select_exam.php" class="nav-link">Выбрать тест</a>
+                        <li class="nav-item"><a href="select_exam.php" class="nav-link">Выбрать тест</a>
                         </li>
-                        <li class="nav-item"><a href="/old_exam_results.php" class="nav-link">Последние результаты</a>
+                        <li class="nav-item"><a href="old_exam_results.php" class="nav-link">Последние результаты</a>
                         </li>
                         <li class="nav-item"><a href="logout.php" class="nav-link">Выйти</a>
                         </li>

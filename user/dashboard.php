@@ -46,7 +46,7 @@ require_once "header.php";
         document.getElementById("total_que").innerHTML = xmlhttp.responseText;
       }
     };
-    xmlhttp.open("GET", "forajax/load_total_que.php", true);
+    xmlhttp.open("GET", "../forajax/load_total_que.php", true);
     xmlhttp.send(null);
   }
 
@@ -68,7 +68,7 @@ require_once "header.php";
         }
       }
     };
-    xmlhttp.open("GET", "forajax/load_questions.php?questionno=" + questionno, true);
+    xmlhttp.open("GET", "../forajax/load_questions.php?questionno=" + questionno, true);
     xmlhttp.send(null);
   }
 
@@ -79,7 +79,7 @@ require_once "header.php";
 
       }
     };
-    xmlhttp.open("GET", "forajax/save_answer_in_session.php?questionno=" + questionno + "&value1=" + radiovalue, true);
+    xmlhttp.open("GET", "../forajax/save_answer_in_session.php?questionno=" + questionno + "&value1=" + radiovalue, true);
     xmlhttp.send(null);
   }
 
@@ -113,7 +113,7 @@ require_once "header.php";
         document.getElementById("timer").innerHTML = xmlhttp.responseText;
       }
     };
-    xmlhttp.open("GET", "forajax/load_timer.php", true);
+    xmlhttp.open("GET", "../forajax/load_timer.php", true);
     xmlhttp.send(null);
   };
 </script>

@@ -9,7 +9,7 @@ if (!isset($_SESSION["username"])) {
 <?php
 }
 include "auth.php";
-include "connection.php";
+include "../connection.php";
 
 $output = '';
 
