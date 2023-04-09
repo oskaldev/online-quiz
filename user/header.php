@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION["username"])) {
 ?>
   <script>
-    window.location = "login.php";
+    window.location = "../errors_pages/401.php";
   </script>
 <?php
 }

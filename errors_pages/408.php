@@ -9,7 +9,7 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>403 - Forbidden</title>
+  <title>408 - RequestTimeout</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -35,12 +35,9 @@ session_start();
 
       <div class="box__description">
         <div class="box__description-container">
-          <div class="box__description-title">Доступ запрещен !</div>
-          <div class="box__description-text">Вы не можете получить доступ к запрашиваемому ресурсу, лучше не надо :) </div>
+          <div class="box__description-title">Whoops!</div>
+          <div class="box__description-text">Request Timeout :( </div>
         </div>
-
-        <a href="../index.php" target="_blank" class="box__button">Go back</a>
-
       </div>
 
     </div>
