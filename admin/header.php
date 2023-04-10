@@ -16,14 +16,15 @@ require_once "../connection.php";
 ?>
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="#">
+  <meta name="description" content="Админ Панель">
   <title>Админ Панель</title>
-  <meta name="description" content="Admin Panel">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-icon.png">
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1336/1336795.png">
   <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">

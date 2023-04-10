@@ -4,83 +4,44 @@ require_once "../connection.php";
 ?>
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="#">
   <meta name="description" content="Admin Login">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="apple-touch-icon" href="apple-icon.png">
-  <link rel="shortcut icon" href="favicon.ico">
-
-
-  <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
+  <title>Admin Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../user/css/login_register_process.css">
 </head>
 
-<body class="bg-dark">
-
-
-  <div class="sufee-login d-flex align-content-center flex-wrap">
+<body>
+  <section class="authoriz">
     <div class="container">
-      <div class="login-content">
-        <div class="login-logo" style="color: #fff">
-          Admin Login
-        </div>
-        <div class="login-form">
-          <form action="" name="form1" method="post">
-            <div class="form-group">
-              <label>email</label>
-              <input type="email" name="email" class="form-control" placeholder="email" required>
-            </div>
-            <div class="form-group">
-              <label>Пароль</label>
-              <input type="password" name="password" class="form-control" placeholder="Пароль" required>
-            </div>
-            <!-- <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember Me
-              </label>
-              <label class="pull-right">
-                <a href="#">Forgotten Password?</a>
-              </label>
-            </div> -->
-            <button type="submit" name="submit1" class="btn btn-success btn-flat m-b-30 m-t-30">Войти</button>
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup2"></div>
+        <div class="login login-admin">
+          <form name="form1" method="post" class="form1">
+            <label class="log-admin" for="chk" aria-hidden="true">Вход в админ панель</label>
+            <input type="email" placeholder="email" name="email" required>
+            <input type="password" title="Введите пароль" placeholder="Пароль" name="password" required>
+            <button type="submit" name="submit1" class="">Войти</button>
             <div class="alert alert-danger" id="errormsg" style="margin-top:10px; display: none;">
               <strong>Не совпадает!</strong> Проверьте правильность ввода почты или пароля !
             </div>
-            <!-- <div class="social-login-content">
-              <div class="social-button">
-                <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Sign in with facebook</button>
-                <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Sign in with twitter</button>
-              </div>
-            </div> -->
           </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 
-  <script src="vendors/jquery/dist/jquery.min.js"></script>
-  <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-  <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

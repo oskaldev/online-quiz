@@ -10,7 +10,8 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>403 - Forbidden</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../errors_pages/style.css">
+
 </head>
 
 <body>

@@ -156,6 +156,10 @@ label > a:hover {
 .log {
   font-size: 45px;
 }
+.log-admin {
+  text-align: center;
+  font-size: 33px;
+}
 .reg {
   font-size: 35px;
 }
@@ -201,6 +205,9 @@ button:hover {
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
+}
+.login-admin {
+  transform: translateY(-80px);
 }
 .login label {
   color: #573b8a;
