@@ -24,7 +24,7 @@ require_once "login_register_process.php";
         <div class="container">
             <div class="main">
                 <input type="checkbox" id="chk" aria-hidden="true">
-                <label class="reg" for="chk" aria-hidden="true"><a href="register.php">Зарегистрироваться</a></label>
+                <label class="reg" for="chk" aria-hidden="true"><a href="register.php">Зарегистfрироваться</a></label>
                 <div class="signup2"></div>
                 <div class="login">
                     <form name="form1" method="post" class="form1">
