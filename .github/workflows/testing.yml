@@ -1,0 +1,25 @@
+name: Пример workflows на PHP
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Установить PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.1'
+    # - name: Запустить тесты
+    #   run: vendor/bin/phpunit
+    - name: Деплой на сервер
+      uses: easingthemes/ssh-deploy@v2.2.9
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+        remote-username: 'username'
+        remote-host: 'example.com'
+        local-path: '.'
+        remote-path: '/var/www/html'
+        args: '--exclude .git'
