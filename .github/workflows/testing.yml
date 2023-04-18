@@ -17,8 +17,8 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.2.9
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_ONLINE_QUIZ }}
-          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-          REMOTE_USER: 'cn73246'
           REMOTE_HOST: '185.114.245.100'
-          local-path: 'C:\OpenServer\domains\online-quiz'
-          remote-path: '/online-quiz/public_html'
+          REMOTE_USER: 'cn73246'
+          SOURCE: 'C:\OpenServer\domains\online-quiz'
+          TARGET: '/home/REMOTE_USER/online-quiz/public_html'
+
