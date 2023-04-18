@@ -1,4 +1,4 @@
-name: Пример workflows на PHP
+name: workflow
 on:
   push:
     branches:
