@@ -16,9 +16,9 @@ jobs:
       - name: Деплой на сервер
         uses: easingthemes/ssh-deploy@v2.2.9
         with:
-          ssh-private-key: ${{ secrets.SSH_ONLINE_QUIZ }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_ONLINE_QUIZ }}
           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-          remote-username: 'cn73246'
-          remote-host: '185.114.245.100'
+          REMOTE_USER: 'cn73246'
+          REMOTE_HOST: '185.114.245.100'
           local-path: 'C:\OpenServer\domains\online-quiz'
           remote-path: '/online-quiz/public_html'
