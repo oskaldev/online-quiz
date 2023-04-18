@@ -16,7 +16,7 @@ jobs:
       - name: Деплой на сервер
         uses: easingthemes/ssh-deploy@v2.2.9
         with:
-          ssh-private-key: ${{b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
+          ssh-private-key: ${{ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAgEAuSh8xAZqwezcrgb/hWLrwE58cciH0/3CNpmEgjC0wlGrgZ2F+ORi
 qqQfQRdlQrGPx+St8uTy0SJKQdYJOjX46/dTijR6nQG5ZyqH7uwwq/+LZ9O/jLMjrKPosd
 UOPV7DoVG7ZiwWefm5IJvgc7KDBaQ3J3wpReGCdEGEmNI+MmRYa8SNZuk2HscBoBuO8DdI
@@ -65,7 +65,7 @@ P090R27L9j4yTG4RZRGXzeDLheiFTSlhYw18M5oeNgwC2z9CYZDK7ug6IiB4mPyguLMbM+
 2aHMNEUpS6kAAAAdYXJ0ZW0tb3NpcG92YXJ0ZW0zMDAyQG1haWwucnUBAgMEBQY= }}
           ssh-known-hosts: ${{ vh304.timeweb.ru ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJi1vvZvbKk4jIGPWVcXioRKZ7Gt27AXHbPEDvFDWYo3L8rhbktPtRrLTZ4T/Kl48Lt7q3+pfXlSDdYpD5GiiiaPJdXaIAKVE4RC9xv8lO4l0n50ZTKtnKQEBSvbacHjqAzHEIOYsJ5T/yuEa7u8l7uXvIR0J5KHKzADv/KoI/A0avj7x9flYF2l3ykDAbtRJHnYULCmp/jC6cGqNxes8hlu9keQXmekysU5RWgGeVcxJl+GNLJl7+v0jO6yJlnrvgqfdXdS1H2IqVMzQ4l+2AcsYVFXZBocTZ/CQ8MySYj7wG3F5lv0EDKk2JaSCcMze4o+6BSms1Sh2qmtehSxKn
 vh304.timeweb.ru ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMG6sRsj/dpLnKtzOr+xp6evsBnrxAG8H7zS/4Z0zzDKMzOZykcAw2g3A83IBpSjgHXomE0qK2JURpIUoQNMzVM=
-vh304.timeweb.ru ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxFVM09h5/hQUzZk+wgF7b9KrITU6j/oNy+aj3tJpw2}}
+vh304.timeweb.ru ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxFVM09h5/hQUzZk+wgF7b9KrITU6j/oNy+aj3tJpw2 }}
           remote-username: 'cn73246'
           remote-host: 'online-quiz.ru'
           local-path: 'C:\OpenServer\domains\online-quiz'
