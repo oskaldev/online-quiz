@@ -19,6 +19,6 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_ONLINE_QUIZ }}
           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           remote-username: 'cn73246'
-          remote-host: 'online-quiz.ru'
+          remote-host: '185.114.245.100'
           local-path: 'C:\OpenServer\domains\online-quiz'
           remote-path: '/online-quiz/public_html'
