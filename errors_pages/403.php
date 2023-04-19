@@ -40,7 +40,7 @@ session_start();
           <div class="box__description-text">Вы не можете получить доступ к запрашиваемому ресурсу, лучше не надо :) </div>
         </div>
 
-        <a href="../index.php" target="_blank" class="box__button">Go back</a>
+        <a href="../index.php" class="box__button">Go back</a>
 
       </div>
 
