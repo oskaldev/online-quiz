@@ -16,14 +16,11 @@ jobs:
       - name: Деплой на сервер
         uses: easingthemes/ssh-deploy@v2.2.9
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_ONLINE_QUIZ }}
-          remote-username: 'cn73246'
-          remote-host: '185.114.245.100'
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_USER: 'cn73246'
+          REMOTE_HOST: '185.114.245.100'
           local-path: 'C:\OpenServer\domains\online-quiz'
           remote-path: '/online-quiz/public_html'
-
-
-
 # name: upload-to-timeweb
 # on:
 #   push:
@@ -42,15 +39,15 @@ jobs:
 #       - name: Установить ssh-askpass
 #         run: sudo apt-get install ssh-askpass
 
-      # - name: Загрузить файлы на сервер
-      #   run: rsync -ravz --progress --delete "C:\OpenServer\domains\online-quiz" cn73246@185.114.245.100:.home/online-quiz/public_html
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+# - name: Загрузить файлы на сервер
+#   run: rsync -ravz --progress --delete "C:\OpenServer\domains\online-quiz" cn73246@185.114.245.100:.home/online-quiz/public_html
+#   env:
+#     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # - name: Установить права на загруженные файлы
-      #   run: ssh cn73246@185.114.245.100 "chmod -R 755 home/online-quiz/public_html"
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+# - name: Установить права на загруженные файлы
+#   run: ssh cn73246@185.114.245.100 "chmod -R 755 home/online-quiz/public_html"
+#   env:
+#     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # - name: Проверить результаты выполнения каждого шага
-      #   run: echo "Шаг успешно выполнен"
+# - name: Проверить результаты выполнения каждого шага
+#   run: echo "Шаг успешно выполнен"
