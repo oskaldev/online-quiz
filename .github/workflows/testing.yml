@@ -13,7 +13,7 @@ jobs:
           php-version: '7.1'
       # - name: Запустить тесты
       #   run: vendor/bin/phpunit
-      # - name: Деплой на сервер
+      - name: Деплой на сервер
         uses: easingthemes/ssh-deploy@v2.2.9
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_ONLINE_QUIZ }}
