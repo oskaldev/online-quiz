@@ -20,10 +20,8 @@
 #       #     ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 #       #     remote-username: 'cn73246'
 #       #     remote-host: '185.114.245.100'
-#       #     local-path: 
+#       #     local-path:
 #       #     remote-path: '/online-quiz/public_html'
-
-
 
 # name: upload-to-timeweb
 on:
@@ -44,12 +42,12 @@ jobs:
         run: sudo apt-get install ssh-askpass
 
       - name: Загрузить файлы на сервер
-        run: rsync -ravz --progress --delete "C:\OpenServer\domains\online-quiz" cn73246@185.114.245.100:/online-quiz/public_html
+        run: rsync -ravz --progress --delete "C:\OpenServer\domains\online-quiz" cn73246@185.114.245.100:/public_html
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Установить права на загруженные файлы
-        run: ssh cn73246@185.114.245.100 "chmod -R 755 /online-quiz/public_html"
+        run: ssh cn73246@185.114.245.100 "chmod -R 755 /public_html"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
