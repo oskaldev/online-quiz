@@ -43,11 +43,6 @@ jobs:
       - name: Установить ssh-askpass
         run: sudo apt-get install ssh-askpass
 
-      - name: Создать директорию для загрузки файлов
-        run: ssh cn73246@185.114.245.100 "mkdir -p /online-quiz/public_html"
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Загрузить файлы на сервер
         run: rsync -ravz --progress --delete C:\OpenServer\domains\online-quiz cn73246@185.114.245.100:/online-quiz/public_html
         env:
