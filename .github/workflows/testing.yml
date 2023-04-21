@@ -1,30 +1,30 @@
-name: workflow
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Установить PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.1'
-      # - name: Запустить тесты
-      #   run: vendor/bin/phpunit
-      # - name: Деплой на сервер
-      #   uses: easingthemes/ssh-deploy@v2.2.9
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_ONLINE_QUIZ }}
-      #     ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      #     remote-username: 'cn73246'
-      #     remote-host: '185.114.245.100'
-      #     local-path: 
-      #     remote-path: '/online-quiz/public_html'
+# name: workflow
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Установить PHP
+#         uses: shivammathur/setup-php@v2
+#         with:
+#           php-version: '7.1'
+#       # - name: Запустить тесты
+#       #   run: vendor/bin/phpunit
+#       # - name: Деплой на сервер
+#       #   uses: easingthemes/ssh-deploy@v2.2.9
+#       #   with:
+#       #     ssh-private-key: ${{ secrets.SSH_ONLINE_QUIZ }}
+#       #     ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+#       #     remote-username: 'cn73246'
+#       #     remote-host: '185.114.245.100'
+#       #     local-path: 
+#       #     remote-path: '/online-quiz/public_html'
 
 
-name: upload-to-timeweb
+# name: upload-to-timeweb
 
 on:
   push:
