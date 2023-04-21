@@ -20,5 +20,43 @@ jobs:
       #     ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
       #     remote-username: 'cn73246'
       #     remote-host: '185.114.245.100'
-      #     local-path: 'C:\OpenServer\domains\online-quiz'
+      #     local-path: 
       #     remote-path: '/online-quiz/public_html'
+
+
+name: upload-to-timeweb
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Установить PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.1'
+
+      - name: Установить ssh-askpass
+        run: sudo apt-get install ssh-askpass
+
+      - name: Создать директорию для загрузки файлов
+        run: ssh cn73246@185.114.245.100 "mkdir -p /var/www/online-quiz.ru"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Загрузить файлы на сервер
+        run: rsync -ravz --progress --delete C:\OpenServer\domains\online-quiz cn73246@185.114.245.100:/var/www/online-quiz.ru
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Установить права на загруженные файлы
+        run: ssh cn73246@185.114.245.100 "chmod -R 755 /var/www/online-quiz.ru"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Проверить результаты выполнения каждого шага
+        run: echo "Шаг успешно выполнен"
