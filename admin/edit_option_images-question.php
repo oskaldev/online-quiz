@@ -89,8 +89,8 @@ if (isset($_POST["submit3"])) {
   $question = $_FILES["iquestion"]["name"];
 
   if ($question != "") {
-    $dst1 = "./opt_images/" . $question;
-    $dst_db1 = "opt_images/" . $question;
+    $dst1 = "./assets/opt_images/" . $question;
+    $dst_db1 = "assets/opt_images/" . $question;
     move_uploaded_file($_FILES["iquestion"]["tmp_name"], $dst1);
     mysqli_query($link, "update questions set question='$dst_db1', opt1='$_POST[iopt1]',opt2='$_POST[iopt2]',opt3='$_POST[iopt3]',opt4='$_POST[iopt4]',answer='$_POST[ianswer]' where id = $id ") or die(mysqli_error($link));
   }

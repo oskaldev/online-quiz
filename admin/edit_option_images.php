@@ -98,39 +98,39 @@ if (isset($_POST["submit2"])) {
   $answer = $_FILES["fanswer"]["name"];
 
   if ($opt1 != "") {
-    $dst1 = "./opt_images/" . $opt1;
-    $dst_db1 = "opt_images/" . $opt1;
+    $dst1 = "./assets/opt_images/" . $opt1;
+    $dst_db1 = "assets/opt_images/" . $opt1;
     move_uploaded_file($_FILES["fopt1"]["tmp_name"], $dst1);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', opt1='$dst_db1' where id=$id ") or die(mysqli_error($link));;
   }
 
 
   if ($opt2 != "") {
-    $dst2 = "./opt_images/" . $opt2;
-    $dst_db2 = "opt_images/" . $opt2;
+    $dst2 = "./assets/opt_images/" . $opt2;
+    $dst_db2 = "assets/opt_images/" . $opt2;
     move_uploaded_file($_FILES["fopt2"]["tmp_name"], $dst2);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', opt2='$dst_db2' where id=$id ") or die(mysqli_error($link));;
   }
 
 
   if ($opt3 != "") {
-    $dst3 = "./opt_images/" . $opt3;
-    $dst_db3 = "opt_images/" . $opt3;
+    $dst3 = "./assets/opt_images/" . $opt3;
+    $dst_db3 = "assets/opt_images/" . $opt3;
     move_uploaded_file($_FILES["fopt3"]["tmp_name"], $dst3);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', opt3='$dst_db3' where id=$id ") or die(mysqli_error($link));;
   }
 
 
   if ($opt4 != "") {
-    $dst4 = "./opt_images/" . $opt4;
-    $dst_db4 = "opt_images/" . $opt4;
+    $dst4 = "./assets/opt_images/" . $opt4;
+    $dst_db4 = "assets/opt_images/" . $opt4;
     move_uploaded_file($_FILES["fopt4"]["tmp_name"], $dst4);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', opt4='$dst_db4' where id=$id ") or die(mysqli_error($link));;
   }
 
   if ($answer != "") {
-    $dst5 = "./opt_images/" . $answer;
-    $dst_db5 = "opt_images/" . $answer;
+    $dst5 = "./assets/opt_images/" . $answer;
+    $dst_db5 = "assets/opt_images/" . $answer;
     move_uploaded_file($_FILES["fanswer"]["tmp_name"], $dst5);
     mysqli_query($link, "update questions set question='$_POST[fquestion]', answer='$dst_db5' where id=$id ") or die(mysqli_error($link));;
   }

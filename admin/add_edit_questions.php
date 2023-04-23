@@ -11,7 +11,7 @@ while ($row = mysqli_fetch_array($res)) {
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Добавьте новые вопросы для теста </h1>
+        <h1>Добавьте новые вопросы для теста - <?php echo $exam_category ?></h1>
       </div>
     </div>
   </div>
@@ -129,6 +129,41 @@ while ($row = mysqli_fetch_array($res)) {
               </div>
 
 
+              <div class="col-lg-6">
+                <div class="card">
+                  <div class="card-body card-block">
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте вопрос</label>
+                      <input type="file" name="question" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте ответ</label>
+                      <input type="text" name="opt1" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте ответ</label>
+                      <input type="text" name="opt2" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте ответ</label>
+                      <input type="text" name="opt3" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте ответ</label>
+                      <input type="text" name="opt4" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label class=" form-control-label">Добавьте правильный ответ</label>
+                      <input type="text" name="answer" placeholder="Добавьте правильный ответ" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" name="submit4" value="Добавить" class="btn btn-success">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </form>
           </div>
         </div>
@@ -161,7 +196,7 @@ while ($row = mysqli_fetch_array($res)) {
                 echo $row["question_no"];
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["question"], 'opt_images/') !== false) {
+                if (strpos($row["question"], 'assets/opt_images/') !== false) {
               ?>
                   <img src="<?php echo $row["question"] ?>" height="50" width="50">
                 <?php
@@ -170,7 +205,7 @@ while ($row = mysqli_fetch_array($res)) {
                 }
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["opt1"], 'opt_images/') !== false) {
+                if (strpos($row["opt1"], 'assets/opt_images/') !== false) {
                 ?>
                   <img src="<?php echo $row["opt1"] ?>" height="50" width="50">
                 <?php
@@ -179,7 +214,7 @@ while ($row = mysqli_fetch_array($res)) {
                 }
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["opt2"], 'opt_images/') !== false) {
+                if (strpos($row["opt2"], 'assets/opt_images/') !== false) {
                 ?>
                   <img src="<?php echo $row["opt2"] ?>" height="50" width="50">
                 <?php
@@ -188,7 +223,7 @@ while ($row = mysqli_fetch_array($res)) {
                 }
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["opt3"], 'opt_images/') !== false) {
+                if (strpos($row["opt3"], 'assets/opt_images/') !== false) {
                 ?>
                   <img src="<?php echo $row["opt3"] ?>" height="50" width="50">
                 <?php
@@ -197,7 +232,7 @@ while ($row = mysqli_fetch_array($res)) {
                 }
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["opt4"], 'opt_images/') !== false) {
+                if (strpos($row["opt4"], 'assets/opt_images/') !== false) {
                 ?>
                   <img src="<?php echo $row["opt4"] ?>" height="50" width="50">
                 <?php
@@ -206,7 +241,7 @@ while ($row = mysqli_fetch_array($res)) {
                 }
                 echo "</td>";
                 echo "<td>";
-                if (strpos($row["answer"], 'opt_images/') !== false) {
+                if (strpos($row["answer"], 'assets/opt_images/') !== false) {
                 ?>
                   <img src="<?php echo $row["answer"] ?>" height="50" width="50">
                 <?php
@@ -216,11 +251,11 @@ while ($row = mysqli_fetch_array($res)) {
                 echo "</td>";
 
                 echo "<td>";
-                if (strpos($row["opt1"], 'opt_images/') !== false) {
+                if (strpos($row["opt1"], 'assets/opt_images/') !== false) {
                 ?>
                   <a href="edit_option_images.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?>">Изменить</a>
                 <?php
-                } else if (strpos($row["question"], 'opt_images/') !== false) {
+                } else if (strpos($row["question"], 'assets/opt_images/') !== false) {
                 ?>
                   <a href="edit_option_images-question.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?>">Изменить</a>
                 <?php

@@ -25,14 +25,9 @@ require_once "../connection.php";
   <link rel="icon" type="image/x-icon" href="#">
   <meta name="description" content="Админ Панель">
   <title>Админ Панель</title>
-  <link rel="apple-touch-icon" href="apple-icon.png">
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1336/1336795.png">
-  <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
@@ -48,7 +43,7 @@ require_once "../connection.php";
         <div class="navbar-brand">
           Админ Панель
         </div>
-        <div class="navbar-brand hidden"><img src="images/logo2.png" alt="Logo"></div>
+        <div class="navbar-brand hidden"><img src="assets/images/logo2.png" alt="Logo"></div>
       </div>
       <div id="main-menu" class="main-menu collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -80,7 +75,7 @@ require_once "../connection.php";
         <div class="col-sm-5">
           <div class="user-area dropdown float-right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+              <img class="user-avatar rounded-circle" src="assets/images/admin.jpg" alt="User Avatar">
             </a>
             <div class="user-menu dropdown-menu">
               <!-- <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
