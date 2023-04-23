@@ -10,15 +10,12 @@ if (!isset($_SESSION["username"])) {
 if (isset($_SESSION["last_activity"])) {
   $_SESSION["last_activity"] = time();
 }
-
 require_once "auth.php";
 require_once "../connection.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,17 +23,12 @@ require_once "../connection.php";
   <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta name="description" content="Тесты по английскому языку">
   <title>Тесты по английскому языку</title>
-
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
   <div class="all-content-wrapper">
-
     <div class="header-advance-area">
       <div class="header-top-area">
         <div class="container-fluid">
@@ -60,44 +52,21 @@ require_once "../connection.php";
                         </li>
                         <li class="nav-item"><a href="logout.php" class="nav-link">Выйти</a>
                         </li>
-                        <!-- <li class="nav-item dropdown res-dis-nn">
-                          <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
-                          <div role="menu" class="dropdown-menu animated zoomIn">
-                            <a href="#" class="dropdown-item">Documentation</a>
-                            <a href="#" class="dropdown-item">Expert Backend</a>
-                            <a href="#" class="dropdown-item">Expert FrontEnd</a>
-                            <a href="#" class="dropdown-item">Contact Support</a>
-                          </div>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Support</a>
-                        </li> -->
                       </ul>
                     </div>
                   </div>
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="header-right-info">
                       <ul class="nav navbar-nav mai-top-nav header-right-menu">
-
-
                         <li class="nav-item">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                             <img src="img/avatar-mini2.jpg" alt="" />
-
                           </a>
                           <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                            <!-- <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
-                            </li>
-                            <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
-                            </li>
-                            <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
-                            </li>
-                            <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                            </li> -->
                             <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
                             </li>
                           </ul>
                         </li>
-
                       </ul>
                     </div>
                   </div>
@@ -108,7 +77,6 @@ require_once "../connection.php";
         </div>
       </div>
       <!-- Mobile Menu start -->
-
       <!-- Mobile Menu end -->
       <div class="breadcome-area">
         <div class="container-fluid">
@@ -116,13 +84,11 @@ require_once "../connection.php";
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="breadcome-list">
                 <div class="row">
-
                   <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 text-right">
                     <ul class="breadcome-menu">
                       <li>
                         <div id="timer" style="display: block;"></div>
                       </li>
-
                     </ul>
                   </div>
                 </div>

@@ -44,82 +44,32 @@ require_once "header.php";
             $count = mysqli_num_rows($res);
 
             if ($count == 0) {
-            ?>
-              <center>
-                <h1>Результаты не найдены</h1>
-              </center>
-            <?php
+              echo "<center><h1>Результаты не найдены</h1></center>";
             } else {
               echo "<table class='table table-bordered'>";
-              echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'>  ";
-
-              echo "<th>";
-              echo "никнейм";
-              echo "</th>";
-
-              echo "<th>";
-              echo "категория экзамена";
-              echo "</th>";
-
-              echo "<th>";
-              echo "всего вопросов";
-              echo "</th>";
-
-              echo "<th>";
-              echo "правильные ответы";
-              echo "</th>";
-
-              echo "<th>";
-              echo "не правильные ответы";
-              echo "</th>";
-
-              echo "<th>";
-              echo "дата";
-              echo "</th>";
-
-              echo "<th>";
-              echo "баллы";
-              echo "</th>";
-
-              echo "</tr>";
+              echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'>  
+          <th>никнейм</th>
+          <th>категория экзамена</th>
+          <th>всего вопросов</th>
+          <th>правильные ответы</th>
+          <th>не правильные ответы</th>
+          <th>дата</th>
+          <th>баллы</th>
+          </tr>";
 
               while ($row = mysqli_fetch_array($res)) {
-
-                echo "<tr>";
-
-                echo "<td>";
-                echo $row["username"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["exam_type"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["total_question"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["correct_answer"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["wrong_answer"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["exam_time"];
-                echo "</td>";
-
-                echo "<td>";
-                echo $row["estimation"];
-                echo "</td>";
-
-                echo "</tr>";
+                echo "<tr>
+            <td>" . $row["username"] . "</td>
+            <td>" . $row["exam_type"] . "</td>
+            <td>" . $row["total_question"] . "</td>
+            <td>" . $row["correct_answer"] . "</td>
+            <td>" . $row["wrong_answer"] . "</td>
+            <td>" . $row["exam_time"] . "</td>
+            <td>" . $row["estimation"] . "</td>
+          </tr>";
               }
               echo "</table>";
             }
-
             ?>
 
           </div>

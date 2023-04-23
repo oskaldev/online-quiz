@@ -34,7 +34,7 @@ $_SESSION["end_time"] = date('Y-m-d H:i:s', strtotime($date . " + $_SESSION[exam
     $res = mysqli_query($link, "select * from questions where category='$_SESSION[exam_category]'");
     $count = mysqli_num_rows($res);
     $wrong = $count - $correct;
-    $estimation = $correct / $count * 100;
+    $estimation = round($correct / $count * 100, 0);
     echo "<br>";
     echo "<br>";
     echo "<center>";
