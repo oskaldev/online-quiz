@@ -12,19 +12,18 @@ $answer = "";
 $count = 0;
 $ans = "";
 
-
 $queno = $_GET["questionno"];
 
 if (isset($_SESSION["answer"][$queno])) {
   $ans = $_SESSION["answer"][$queno];
 }
-$res = mysqli_query($link, "select * from questions where category='$_SESSION[exam_category]' && question_no=$_GET[questionno] ");
+
+$res = mysqli_query($link, "SELECT * FROM questions WHERE category='{$_SESSION['exam_category']}' AND question_no={$_GET['questionno']}");
 $count = mysqli_num_rows($res);
 
 if ($count == 0) {
   echo "over";
 } else {
-
   while ($row = mysqli_fetch_array($res)) {
     $question_no = $row["question_no"];
     $question = $row["question"];
@@ -34,110 +33,40 @@ if ($count == 0) {
     $opt4 = $row["opt4"];
   }
 ?>
-
   <br>
   <table>
     <tr>
       <td style="font-weight:bold; font-size:18px; padding-left:5px" colspan="2">
-        <?php echo "(" . $question_no . ") " . $question; ?>
+        <?php if (strpos($question, 'assets/opt_images/') !== false) { ?>
+          <img src="../admin/<?php echo $question; ?>" height="50" width="50">
+        <?php } else { ?>
+          <?php echo "(" . $question_no . ") " . $question; ?>
+        <?php } ?>
       </td>
     </tr>
   </table>
-
 
   <table>
-    <tr>
-      <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt1;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php if ($ans == $opt1) {
-                                                                                                                                          echo "checked";
-                                                                                                                                        }
-                                                                                                                                        ?>>
-      </td>
-
-      <td style="padding-left: 10px">
-        <?php
-        if (strpos($opt1, 'images/') !== false) {
-        ?>
-          <img src="admin/<?php echo $opt1; ?>" height="50" width="50">
-        <?php
-        } else {
-          echo $opt1;
-        }
-        ?>
-      </td>
-
-    </tr>
-
-    <tr>
-      <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt2;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
-                                                                                                                                        if ($ans == $opt2) {
-                                                                                                                                          echo "checked";
-                                                                                                                                        }
-                                                                                                                                        ?>>
-      </td>
-
-      <td style="padding-left: 10px">
-        <?php
-        if (strpos($opt2, 'images/') !== false) {
-        ?>
-          <img src="admin/<?php echo $opt2; ?>" height="50" width="50">
-        <?php
-        } else {
-          echo $opt2;
-        }
-        ?>
-      </td>
-
-    </tr>
-
-    <tr>
-      <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt3;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
-                                                                                                                                        if ($ans == $opt3) {
-                                                                                                                                          echo "checked";
-                                                                                                                                        }
-                                                                                                                                        ?>>
-      </td>
-
-      <td style="padding-left: 10px">
-        <?php
-        if (strpos($opt3, 'images/') !== false) {
-        ?>
-          <img src="admin/<?php echo $opt3; ?>" height="50" width="50">
-        <?php
-        } else {
-          echo $opt3;
-        }
-        ?>
-      </td>
-
-    </tr>
-
-    <tr>
-      <td>
-        <input type="radio" name="r1" id="r1" value="<?php echo $opt4;  ?>" onclick="radioclick(this.value,<?php echo $question_no ?>)" <?php
-                                                                                                                                        if ($ans == $opt4) {
-                                                                                                                                          echo "checked";
-                                                                                                                                        }
-                                                                                                                                        ?>>
-      </td>
-
-      <td style="padding-left: 10px">
-        <?php
-        if (strpos($opt4, 'images/') !== false) {
-        ?>
-          <img src="admin/<?php echo $opt4; ?>" height="50" width="50">
-        <?php
-        } else {
-          echo $opt4;
-        }
-        ?>
-      </td>
-
-    </tr>
+    <?php if (empty($opt1)) { ?>
+      <input type="text" name="answer" value="<?php echo $ans; ?>" oninput="radioclick(this.value.toLowerCase(), <?php echo $question_no; ?>)">
+    <?php } else { ?>
+      <table>
+        <?php for ($i = 1; $i <= 4; $i++) { ?>
+          <tr>
+            <td>
+              <input type="radio" name="r1" id="r1_<?php echo $i; ?>" value="<?php echo ${"opt{$i}"}; ?>" onclick="radioclick(this.value, <?php echo $question_no; ?>)" <?php echo (strtolower($ans) == strtolower(${"opt{$i}"})) ? "checked" : ""; ?>>
+            </td>
+            <td style="padding-left: 10px">
+              <?php if (strpos(${"opt{$i}"}, 'assets/opt_images/') !== false) { ?>
+                <img src="../admin/<?php echo ${"opt{$i}"}; ?>" height="50" width="50">
+              <?php } else { ?>
+                <?php echo ${"opt{$i}"}; ?>
+              <?php } ?>
+            </td>
+          </tr>
+        <?php } ?>
+      </table>
+    <?php } ?>
   </table>
-<?php
 
-
-}
+<?php } ?>
