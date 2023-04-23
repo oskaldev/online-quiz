@@ -27,8 +27,8 @@ require_once "../connection.php";
   <title>Админ Панель</title>
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1336/1336795.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -75,7 +75,7 @@ require_once "../connection.php";
         <div class="col-sm-5">
           <div class="user-area dropdown float-right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img class="user-avatar rounded-circle" src="assets/images/admin.jpg" alt="User Avatar">
+              <img class="user-avatar rounded-circle" src="assets/img/admin.jpg" alt="User Avatar">
             </a>
             <div class="user-menu dropdown-menu">
               <!-- <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
