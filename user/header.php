@@ -16,6 +16,7 @@ require_once "../connection.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@ require_once "../connection.php";
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="all-content-wrapper">
     <div class="header-advance-area">
@@ -52,6 +54,7 @@ require_once "../connection.php";
                         </li>
                         <li class="nav-item"><a href="logout.php" class="nav-link">Выйти</a>
                         </li>
+                        <li><input type="text" id="search-input" placeholder="Поиск..." class="form-control"></li>
                       </ul>
                     </div>
                   </div>
