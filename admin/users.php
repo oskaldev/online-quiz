@@ -16,32 +16,55 @@ require_once "header.php";
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-
-            <div class="col-md-6">
+            <div>
               <h2 style='padding-bottom:10px;' class="center">Export</h2>
               <form style='padding-bottom:50px;' method="POST" action="excel.php">
                 <div class="row">
                   <div class="col-md-6">
-                    <!-- <select name="export_file_type" class="form-control" required>
-              <option value="">Пожалуйста выберете формат</option>
-              <option value="xlsx">xlsx</option>
-              <option value="xls">xls</option>
-              <option value="csv">csv</option>
-                    </select> -->
                   </div>
                 </div>
                 <input type="submit" name="export_users_btn_admin" class="btn btn-success" value="Export XLS">
                 <input type="submit" name="export_users_csv_admin" class="btn btn-success" value="Export CSV">
               </form>
             </div>
+            <div class="form-group col-lg-12 select">
+              <form method="post">
+                <select name="groups" id="pet-select">
+                  <option value="">Все</option>
+                  <option value="ПО-42">ПО-42</option>
+                  <option value="ПО-32">ПО-32</option>
+                  <option value="ПО-22">ПО-22</option>
+                  <option value="ПО-12">ПО-12</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Найти</button>
+              </form>
+            </div>
+
             <?php
+
+            if (isset($_POST['groups'])) {
+              $group = $_POST['groups'];
+              if ($group != "") {
+                $res = mysqli_query($link, "SELECT * FROM registration WHERE `groups` = '$group'");
+              } else {
+                $res = mysqli_query($link, "SELECT * FROM registration");
+              }
+            } else {
+              $res = mysqli_query($link, "SELECT * FROM registration");
+            }
+
+
+
+            if (!$res) {
+              printf("Error: %s\n", mysqli_error($link));
+              exit();
+            }
 
             if (isset($_POST['delete'])) {
               foreach ($_POST['user_ids'] as $id) {
-                mysqli_query($link, "DELETE FROM registration WHERE id='$id'");
+                mysqli_query($link, "delete from registration where id='$id'");
               }
             }
-            $res = mysqli_query($link, "SELECT * FROM registration");
             $count = mysqli_num_rows($res);
 
             if ($count == 0) {
