@@ -5,7 +5,7 @@ require_once "header.php";
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Добавить категорию теста</h1>
+        <h1>Добавить тему теста</h1>
       </div>
     </div>
   </div>
@@ -19,11 +19,11 @@ require_once "header.php";
             <div class="card-body">
               <div class="col-lg-5">
                 <div class="card">
-                  <div class="card-header"><strong>Добавить Категорию </strong></div>
+                  <div class="card-header"><strong>Добавить тему </strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">Новая Категория теста</label>
-                      <input type="text" name="examname" placeholder="Добавить категорию" class="form-control">
+                      <label class=" form-control-label">Новая тема теста</label>
+                      <input type="text" name="examname" placeholder="Добавить тему" class="form-control">
                     </div>
                     <div class="form-group">
                       <label class=" form-control-label">Время теста</label>
@@ -40,7 +40,7 @@ require_once "header.php";
               <div class="col-lg-7">
                 <div class="card">
                   <div class="card-header">
-                    <strong class="card-title">Категория Теста</strong>
+                    <strong class="card-title">Тема Теста</strong>
                   </div>
                   <div class="card-body">
                     <table class="table table-bordered">

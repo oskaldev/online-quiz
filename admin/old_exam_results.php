@@ -49,7 +49,7 @@ require_once "header.php";
               echo "<table class='table table-bordered'>";
               echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'>  
           <th>никнейм</th>
-          <th>категория экзамена</th>
+          <th>тема экзамена</th>
           <th>всего вопросов</th>
           <th>правильные ответы</th>
           <th>не правильные ответы</th>

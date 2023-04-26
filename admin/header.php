@@ -48,7 +48,7 @@ require_once "../connection.php";
       <div id="main-menu" class="main-menu collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="exam_category.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить категорию</a>
+            <a href="exam_category.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить тему</a>
           </li>
           <li>
             <a href="add_edit_exam_questions.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить тест</a>

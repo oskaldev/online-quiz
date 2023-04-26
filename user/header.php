@@ -63,7 +63,7 @@ require_once "../connection.php";
                       <ul class="nav navbar-nav mai-top-nav header-right-menu">
                         <li class="nav-item">
                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                            <img src="img/avatar-mini2.jpg" alt="" />
+                            <img src="assets/img/avatar-mini2.jpg" alt="" />
                           </a>
                           <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                             <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>

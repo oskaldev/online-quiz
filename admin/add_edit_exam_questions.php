@@ -5,7 +5,7 @@ require_once "header.php";
   <div class="col-sm-12">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Выберете категорию экзамена и добавьте вопросы</h1>
+        <h1>Выберете тему экзамена и добавьте вопросы</h1>
       </div>
     </div>
   </div>
