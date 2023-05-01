@@ -2,6 +2,7 @@
 require_once "header.php";
 $date = date('Y-m-d H:i:s');
 $_SESSION["end_time"] = date('Y-m-d H:i:s', strtotime($date . " + $_SESSION[exam_time] minutes"));
+
 ?>
 
 
@@ -56,8 +57,11 @@ $_SESSION["end_time"] = date('Y-m-d H:i:s', strtotime($date . " + $_SESSION[exam
 
 <?php
 if (isset($_SESSION["exam_start"])) {
+  $result = mysqli_query($link, "SELECT `groups` FROM registration WHERE username = '{$_SESSION['username']}' LIMIT 1");
+  $rows = mysqli_fetch_assoc($result);
+  $groups = $rows['groups'];
   $date = date("Y-m-d");
-  mysqli_query($link, "insert into exam_results (id, username, exam_type, total_question, correct_answer, wrong_answer, exam_time, estimation) values(NULL, '$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date', '$estimation') ") or die(mysqli_error($link));
+  mysqli_query($link, "insert into exam_results (username, exam_type, total_question, correct_answer, wrong_answer, exam_time, estimation, `groups`) values('$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date', '$estimation', '$groups') ") or die(mysqli_error($link));
 }
 
 if (isset($_SESSION["exam_start"])) {
