@@ -56,10 +56,10 @@ require_once "header.php";
   // Обработчик клика на кнопку поиска
   document.getElementById("search-btn").addEventListener("click", function() {
     // Получаем выбранное значение в селекте
-    var group = document.getElementById("pet-select").value;
+    let group = document.getElementById("pet-select").value;
 
     // Создаем объект XMLHttpRequest
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
     // Настраиваем его для отправки запроса
     xhr.open("POST", "load-users.php", true);
