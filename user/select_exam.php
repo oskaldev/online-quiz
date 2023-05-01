@@ -18,10 +18,10 @@ require_once "header.php";
 </div>
 <script>
   window.addEventListener('DOMContentLoaded', function() {
-    var searchInput = document.getElementById('search-input');
+    let searchInput = document.getElementById('search-input');
     searchInput.addEventListener('input', function() {
-      var search = searchInput.value.toLowerCase();
-      var searchItems = document.querySelectorAll('.search-item');
+      let search = searchInput.value.toLowerCase();
+      let searchItems = document.querySelectorAll('.search-item');
       searchItems.forEach(function(item) {
         if (item.value.toLowerCase().indexOf(search) >= 0) {
           item.style.display = 'block';

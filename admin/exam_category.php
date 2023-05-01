@@ -66,7 +66,7 @@ require_once "header.php";
                             <td><?php echo $row["category"]; ?></td>
                             <td><?php echo $row["exam_time"]; ?></td>
                             <td><a href="edit_exam.php?id=<?php echo $row["id"]; ?>">Изменить</a></td>
-                            <td><a href="delete.php?id=<?php echo $row["id"]; ?>">Удалить</a></td>
+                            <td><a href="delete_category.php?id=<?php echo $row["id"]; ?>">Удалить</a></td>
                           </tr>
                         <?php
                         }
@@ -93,7 +93,6 @@ if (isset($_POST["submit1"])) {
   mysqli_query($link, "insert into exam_category values(NULL,'$_POST[examname]','$_POST[examtime]')") or die(mysqli_error($link));
 ?>
   <script>
-    alert("exam added");
     window.location.href = window.location.href;
   </script>
 <?php

@@ -27,7 +27,8 @@ require_once "../connection.php";
   <title>Админ Панель</title>
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1336/1336795.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet'>
+  <link rel="stylesheet" href="css/test.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -55,6 +56,9 @@ require_once "../connection.php";
           </li>
           <li>
             <a href="old_exam_results.php"> <i class="menu-icon fa fa-dashboard"></i>Результаты тестов</a>
+          </li>
+          <li>
+            <a href="teachers.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить учителя</a>
           </li>
           <li>
             <a href="users.php"> <i class="menu-icon fa fa-dashboard"></i>Список пользователей</a>

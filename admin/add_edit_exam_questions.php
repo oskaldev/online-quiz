@@ -20,14 +20,12 @@ require_once "header.php";
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Exam Name</th>
-                  <th scope="col">Exam Time</th>
+                  <th scope="col">Название темы</th>
+                  <th scope="col">Время теста</th>
                   <th scope="col">Выбрать</th>
-
                 </tr>
               </thead>
               <tbody>
-
                 <?php
                 $count = 0;
                 $res = mysqli_query($link, "select * from exam_category");
@@ -39,13 +37,10 @@ require_once "header.php";
                     <td><?php echo $row["category"]; ?></td>
                     <td><?php echo $row["exam_time"]; ?></td>
                     <td><a href="add_edit_questions.php?id=<?php echo $row["id"]; ?>">Выбрать</a></td>
-
                   </tr>
                 <?php
                 }
-
                 ?>
-
               </tbody>
             </table>
           </div>
