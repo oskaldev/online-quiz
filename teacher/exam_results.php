@@ -7,7 +7,7 @@ require_once "header.php";
     <div class="col-md-6">
       <h2 class="center">Export</h2>
       <div class="form-group select">
-        <form method="post" action="excel.php">
+        <form method="post" action="excel.php" target="_blank">
           <select name="groups" id="pet-select">
             <option value="">Все</option>
             <option value="ПО-42">ПО-42</option>
@@ -15,6 +15,7 @@ require_once "header.php";
             <option value="ПО-22">ПО-22</option>
             <option value="ПО-12">ПО-12</option>
           </select>
+          <input type="date" id="exam-time" name="exam_time">
           <button type="button" id="search-btn" class="btn btn-primary">Найти</button>
           <input type="submit" name="export_btn" class="btn btn-success" value="Export XLS">
           <input type="submit" name="export_csv" class="btn btn-success" value="Export CSV">
@@ -32,17 +33,17 @@ require_once "header.php";
   document.getElementById("search-btn").addEventListener("click", function() {
     // Получаем выбранное значение в селекте
     let group = document.getElementById("pet-select").value;
-
+    console.log("Выбранная группа:", group);
+    // Получаем значение даты
+    let examTime = document.getElementById("exam-time").value;
+    console.log("Выбранная дата:", examTime);
     // Создаем объект XMLHttpRequest
     let xhr = new XMLHttpRequest();
-
     // Настраиваем его для отправки запроса
     xhr.open("POST", "load-users.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    // Отправляем запрос и передаем выбранное значение селекта
-    xhr.send("groups=" + group);
-
+    // Отправляем запрос и передаем выбранное значение селекта и значение даты
+    xhr.send("groups=" + group + "&exam_time=" + examTime);
     // Обработчик ответа сервера
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -52,6 +53,7 @@ require_once "header.php";
     };
   });
 </script>
+
 <?php
 include "footer.php";
 ?>

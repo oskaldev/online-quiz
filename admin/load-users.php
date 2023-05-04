@@ -50,7 +50,6 @@ if ($count == 0) {
 } else {
 
   echo "<form method='post'>";
-  // echo "<td colspan='6'><button type='submit' class='btn btn-success' name='delete'>Удалить выбранных пользователей</button></td>";
   echo "<table class='table table-bordered'>";
   echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'> ";
   echo "<th></th>";

@@ -21,7 +21,7 @@ require_once "header.php";
 
             <div class="col-md-6">
               <h2 style='padding-bottom:10px;' class="center">Export</h2>
-              <form style='padding-bottom:50px;' method="POST" action="excel.php">
+              <form style='padding-bottom:50px;' method="POST" action="excel.php" target="_blank">
                 <div class="row">
                   <div class="col-md-6">
                     <!-- <select name="export_file_type" class="form-control" required>

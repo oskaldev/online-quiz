@@ -23,7 +23,7 @@ if (isset($_POST["export_btn"])) {
     <table class="table border="1">
       <tr>
         <th>никнейм</th>
-        <th>тип экзамена</th>
+        <th>тема экзамена</th>
         <th>всего вопросов</th>
         <th>правильных ответов</th>
         <th>не правильных ответов</th>
@@ -49,8 +49,10 @@ if (isset($_POST["export_btn"])) {
     header("Cache-Control: no-cache, must-revalidate");
     header("Pragma: no-cache");
     header("Content-type: application/vnd.ms-excel;");
-    header("Content-Disposition:attachment; filename=download.xls");
+    header("Content-Disposition:attachment; filename=result-test.xls");
     echo $output;
+  } else {
+    echo "Нет результатов для экспорта";
   }
 }
 
@@ -60,7 +62,7 @@ if (isset($_POST["export_csv"])) {
 
   if ($count > 0) {
 
-    $output .= "никнейм; тип экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
+    $output .= "никнейм; тема экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
     while ($row = mysqli_fetch_array($res)) {
       $output .= '"' . $row["username"] . '";"' . $row["exam_type"] . '";"' . $row["total_question"] . '";"' . $row["correct_answer"] . '";"' . $row["wrong_answer"] . '";"' . $row["exam_time"] . '";"' . $row["estimation"] . "\"\n";
     }
@@ -68,8 +70,10 @@ if (isset($_POST["export_csv"])) {
     header("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
     header('Content-Encoding: UTF-8');
     header('Content-Type: text/csv; charset=utf-8');
-    header('Content-Disposition: attachment; filename=download.csv');
+    header('Content-Disposition: attachment; filename=result-test.csv');
 
     echo $output;
+  } else {
+    echo "Нет результатов для экспорта";
   }
 }

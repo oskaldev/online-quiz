@@ -25,7 +25,7 @@ if (isset($_POST["export_btn_admin"])) {
       <tr>
         <th>id</th>
         <th>никнейм</th>
-        <th>тип экзамена</th>
+        <th>тема экзамена</th>
         <th>всего вопросов</th>
         <th>правильных ответов</th>
         <th>не правильных ответов</th>
@@ -54,6 +54,8 @@ if (isset($_POST["export_btn_admin"])) {
     header("Content-type: application/vnd.ms-excel;");
     header("Content-Disposition:attachment; filename=exam-results.xls");
     echo $output;
+  } else {
+    echo "Нет результатов для экспорта";
   }
 }
 
@@ -63,7 +65,7 @@ if (isset($_POST["export_csv_admin"])) {
 
   if ($count > 0) {
 
-    $output .= "id; никнейм; тип экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
+    $output .= "id; никнейм; тема экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
     while ($row = mysqli_fetch_array($res)) {
       $output .= '"' . $row["id"] . '";"' . $row["username"] . '";"' . $row["exam_type"] . '";"' . $row["total_question"] . '";"' . $row["correct_answer"] . '";"' . $row["wrong_answer"] . '";"' . $row["exam_time"] . '";"' . $row["estimation"] . "\"\n";
     }
@@ -80,11 +82,8 @@ if (isset($_POST["export_csv_admin"])) {
 
 if (isset($_POST["export_users_btn_admin"])) {
   $res = mysqli_query($link, "select * from registration order by id desc ");
-
   $count = mysqli_num_rows($res);
-
   if ($count > 0) {
-
     $output .= '
     <table class="table border="1">
       <tr>
@@ -109,13 +108,13 @@ if (isset($_POST["export_users_btn_admin"])) {
       ';
     }
     $output .= '</table>';
-    $output = iconv("UTF-8", "Windows-1251//IGNORE", $output);
-    header("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
     header("Cache-Control: no-cache, must-revalidate");
     header("Pragma: no-cache");
     header("Content-type: application/vnd.ms-excel;");
     header("Content-Disposition:attachment; filename=users.xls");
     echo $output;
+  } else {
+    echo "Нет результатов для экспорта";
   }
 }
 
@@ -136,7 +135,8 @@ if (isset($_POST["export_users_csv_admin"])) {
     header('Content-Encoding: UTF-8');
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=users.csv');
-
     echo $output;
+  } else {
+    echo "Нет результатов для экспорта";
   }
 }
