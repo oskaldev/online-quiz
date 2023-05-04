@@ -1,7 +1,7 @@
 <?php
 require_once "header.php";
 ?>
-<div class="row" style="margin: 0px; padding:0px; margin-bottom: 50px;">
+<div class="row" style="margin: 0px; padding:0px; margin-bottom: 150px;">
   <div class="col-lg-8 col-lg-push-2" style="min-height: 500px; background-color: white;border: 1px solid;">
     <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
     <div class="col-md-6">
@@ -15,10 +15,10 @@ require_once "header.php";
             <option value="ПО-22">ПО-22</option>
             <option value="ПО-12">ПО-12</option>
           </select>
-          <input type="date" id="exam-time" name="exam_time">
           <button type="button" id="search-btn" class="btn btn-primary">Найти</button>
           <input type="submit" name="export_btn" class="btn btn-success" value="Export XLS">
           <input type="submit" name="export_csv" class="btn btn-success" value="Export CSV">
+          <input type="date" id="exam-time" name="exam_time">
         </form>
       </div>
     </div>

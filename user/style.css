@@ -1,57 +1,3 @@
-/*-----------------------------------------------------------------------------------
-
-    Template Name: Kiaalap - Kiaalap Admin Template 
-    Description: Kiaalap Admin Template is a responsive admin template based on the famous Bootstrap framework it's easy to edit and customize by documentation.
-    Author: Colorlib
-    Version: 1.0
-
------------------------------------------------------------------------------------
-    
-    CSS INDEX
-    ===================
-	
-    1. Common
-	2. Helper Class
-	3. All Nested Class
-	4. left sidebar
-		4.1 left Sidebar switcher
-	5. Header Top
-	6. Breadcrumb
-	7. Star Rating css
-	8. Analytics
-	9. widgets CSS
-	10. Event
-	11. Professors
-	12. Student
-	13. Courses
-		13.1 Courses Info
-		13.2. Course Payment
-	14. Library
-	15. Inbox
-	16. Google Map
-	17. Images Cropper
-	18. Form Element
-	19. Mini Sidebar
-	20. Custom Scroll
-	21. Wizard CSS
-	22. Notification
-	23. footer
-
-
-
-  
------------------------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-/*  1. Common
-/*----------------------------------------*/
-html,
-body {
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  background: #f6f8fa;
-}
 .floatleft {
   float: left;
 }
@@ -96,10 +42,6 @@ h6 {
 }
 a {
   transition: all 0.3s ease 0s;
-  text-decoration: none;
-}
-a:hover {
-  color: #ec4445;
   text-decoration: none;
 }
 a:visited,
