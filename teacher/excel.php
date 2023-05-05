@@ -35,10 +35,9 @@ if (isset($_POST["export_btn"])) {
     printf("Error: %s\n", mysqli_error($link));
     exit();
   }
+  // 
   $count = mysqli_num_rows($res);
-
   if ($count > 0) {
-
     $output .= '
     <table class="table border="1">
       <tr>
