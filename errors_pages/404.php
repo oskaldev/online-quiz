@@ -23,10 +23,15 @@ session_start();
       <h1>404</h1>
       <h2>PAGE NOT FOUND</h2>
       <h3>BACK TO HOME?</h3>
-      <a href="../index.php" class="yes">YES</a>
+      <a href="#" onclick="goBack()" class="yes">YES</a>
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">NO</a>
     </div>
   </section>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </body>
 
 </html>

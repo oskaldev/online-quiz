@@ -39,13 +39,14 @@ session_start();
           <div class="box__description-title">Доступ запрещен !</div>
           <div class="box__description-text">Вы не можете получить доступ к запрашиваемому ресурсу, лучше не надо :) </div>
         </div>
-
-        <a href="../index.php" class="box__button">Go back</a>
-
+        <a href="#" onclick="goBack()" class="yes">YES</a>
       </div>
-
     </div>
-
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
 
 </body>
 
