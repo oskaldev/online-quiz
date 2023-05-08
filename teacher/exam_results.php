@@ -29,30 +29,31 @@ require_once "header.php";
 </div>
 </div>
 <script>
-  // Обработчик клика на кнопку поиска
-  document.getElementById("search-btn").addEventListener("click", function() {
-    // Получаем выбранное значение в селекте
+  document.getElementById("search-btn").addEventListener("click", async function() {
     let group = document.getElementById("pet-select").value;
     console.log("Выбранная группа:", group);
-    // Получаем значение даты
     let examTime = document.getElementById("exam-time").value;
     console.log("Выбранная дата:", examTime);
-    // Создаем объект XMLHttpRequest
-    let xhr = new XMLHttpRequest();
-    // Настраиваем его для отправки запроса
-    xhr.open("POST", "load-users.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // Отправляем запрос и передаем выбранное значение селекта и значение даты
-    xhr.send("groups=" + group + "&exam_time=" + examTime);
-    // Обработчик ответа сервера
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        // Выводим ответ сервера в блок с ID "user-list"
-        document.getElementById("user-list").innerHTML = xhr.responseText;
+    try {
+      const response = await fetch("load-users.php", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded"
+        },
+        body: "groups=" + group + "&exam_time=" + examTime
+      });
+      if (response.ok) {
+        const data = await response.text();
+        document.getElementById("user-list").innerHTML = data;
       }
-    };
+    } catch (error) {
+      console.error('Error:', error);
+    }
   });
 </script>
+
+
+
 
 <?php
 include "footer.php";

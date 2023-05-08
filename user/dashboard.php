@@ -39,48 +39,48 @@ require_once "header.php";
 </div>
 
 <script>
-  function load_total_que() {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        document.getElementById("total_que").innerHTML = xmlhttp.responseText;
+  async function load_total_que() {
+    try {
+      const response = await fetch("../forajax/load_total_que.php");
+
+      if (response.ok) {
+        const totalQue = await response.text();
+        document.getElementById("total_que").innerHTML = totalQue;
       }
-    };
-    xmlhttp.open("GET", "../forajax/load_total_que.php", true);
-    xmlhttp.send(null);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
-
-
 
   let questionno = "1";
   load_questions(questionno);
 
-  function load_questions(questionno) {
+  async function load_questions(questionno) {
     document.getElementById("current_que").innerHTML = questionno;
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        if (xmlhttp.responseText == "over") {
+    try {
+      const response = await fetch("../forajax/load_questions.php?questionno=" + questionno);
+
+      if (response.ok) {
+        const responseData = await response.text();
+
+        if (responseData === "over") {
           window.location = "result.php";
         } else {
-          document.getElementById("load_questions").innerHTML = xmlhttp.responseText;
-          load_total_que();
+          document.getElementById("load_questions").innerHTML = responseData;
+          await load_total_que();
         }
       }
-    };
-    xmlhttp.open("GET", "../forajax/load_questions.php?questionno=" + questionno, true);
-    xmlhttp.send(null);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
-  function radioclick(radiovalue, questionno) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-      }
-    };
-    xmlhttp.open("GET", "../forajax/save_answer_in_session.php?questionno=" + questionno + "&value1=" + radiovalue, true);
-    xmlhttp.send(null);
+  async function radioclick(radiovalue, questionno) {
+    try {
+      await fetch("../forajax/save_answer_in_session.php?questionno=" + questionno + "&value1=" + radiovalue);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
   function load_previous() {
@@ -98,25 +98,27 @@ require_once "header.php";
   }
 </script>
 
+
 <script>
   setInterval(function() {
     timer();
   }, 1000);
-
-  function timer() {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        if (xmlhttp.responseText == "00:00:01") {
+  async function timer() {
+    try {
+      const response = await fetch("../forajax/load_timer.php");
+      if (response.ok) {
+        const timerValue = await response.text();
+        if (timerValue === "00:00:01") {
           window.location = "result.php";
         }
-        document.getElementById("timer").innerHTML = xmlhttp.responseText;
+        document.getElementById("timer").innerHTML = timerValue;
       }
-    };
-    xmlhttp.open("GET", "../forajax/load_timer.php", true);
-    xmlhttp.send(null);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 </script>
+
 
 <?php
 include "footer.php";

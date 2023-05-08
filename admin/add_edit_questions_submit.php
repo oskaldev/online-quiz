@@ -30,7 +30,6 @@ if (isset($_POST["submit1"])) {
 
 ?>
   <script>
-    alert("Вопросы добавлены !");
     window.location.href = window.location.href;
   </script>
 <?php
@@ -88,7 +87,6 @@ if (isset($_POST["submit2"])) {
 
 ?>
   <script>
-    alert("Вопросы добавлены !");
     window.location.href = window.location.href;
   </script>
 <?php
@@ -124,7 +122,6 @@ if (isset($_POST["submit3"])) {
 
 ?>
   <script>
-    alert("Вопросы добавлены !");
     window.location.href = window.location.href;
   </script>
 <?php
@@ -161,7 +158,6 @@ if (isset($_POST["submit4"])) {
 
 ?>
   <script>
-    alert("Вопросы добавлены !");
     window.location.href = window.location.href;
   </script>
 <?php

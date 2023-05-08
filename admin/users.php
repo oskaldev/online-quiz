@@ -53,30 +53,26 @@ require_once "header.php";
 
 
 <script>
-  // Обработчик клика на кнопку поиска
-  document.getElementById("search-btn").addEventListener("click", function() {
-    // Получаем выбранное значение в селекте
+  document.getElementById("search-btn").addEventListener("click", async function() {
     let group = document.getElementById("pet-select").value;
-
-    // Создаем объект XMLHttpRequest
-    let xhr = new XMLHttpRequest();
-
-    // Настраиваем его для отправки запроса
-    xhr.open("POST", "load-users.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    // Отправляем запрос и передаем выбранное значение селекта
-    xhr.send("groups=" + group);
-
-    // Обработчик ответа сервера
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        // Выводим ответ сервера в блок с ID "user-list"
-        document.getElementById("user-list").innerHTML = xhr.responseText;
+    try {
+      const response = await fetch("load-users.php", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded"
+        },
+        body: "groups=" + group
+      });
+      if (response.ok) {
+        const data = await response.text();
+        document.getElementById("user-list").innerHTML = data;
       }
-    };
+    } catch (error) {
+      console.error('Error:', error);
+    }
   });
 </script>
+
 <?php
 include 'footer.php';
 ?>

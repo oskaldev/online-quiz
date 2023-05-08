@@ -33,17 +33,18 @@ require_once "header.php";
   });
 </script>
 <script>
-  function set_exam_type_session(exam_category) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+  async function set_exam_type_session(exam_category) {
+    try {
+      const response = await fetch("../forajax/set_exam_type_session.php?exam_category=" + exam_category);
+      if (response.ok) {
         window.location = "dashboard.php";
       }
-    };
-    xmlhttp.open("GET", "../forajax/set_exam_type_session.php?exam_category=" + exam_category, true);
-    xmlhttp.send(null);
-  };
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 </script>
+
 
 <?php
 include "footer.php";
