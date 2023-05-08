@@ -24,75 +24,31 @@ require_once "../connection.php";
   <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
   <meta name="description" content="Результаты тестов">
   <title>Результаты тестов</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="all-content-wrapper">
-    <div class="header-advance-area">
-      <div class="header-top-area">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="header-top-wraper">
-                <div class="row">
-                  <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                    <div class="menu-switcher-pro">
-                      <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-                        <i class="educate-icon educate-nav"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
-                    <div class="header-top-menu tabl-d-n">
-                      <ul class="nav navbar-nav mai-top-nav">
-                        <li class="nav-item"><a href="logout.php" class="nav-link">Выйти</a> </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                    <div class="header-right-info">
-                      <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                        <li class="nav-item">
-                          <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                            <img src="assets/img/avatar-mini2.jpg" alt="" />
-                          </a>
-                          <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                            <li><a href="logout.php"><span class="edu-icon edu-locked author-log-ic"></span>Выйти из аккаунта</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile Menu start -->
-      <!-- Mobile Menu end -->
-      <div class="breadcome-area">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="breadcome-list">
-                <div class="row">
-                  <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 text-right">
-                    <ul class="breadcome-menu">
-                      <li>
-                        <div id="timer" style="display: block;"></div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <header class="p-3 border-bottom header">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="http://rgkript.ru/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+          <img src="assets/logo/logo.png" alt="" class="bi me-2" width="50  px" height="50  px">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <!-- <li><a href="#" class="nav-link px-2 link-body-emphasis">Личный кабинет</a></li> -->
+          <li><a href="http://rgkript.ru/kontaktyi/" class="nav-link px-2 link-body-emphasis">Контакты</a></li>
+        </ul>
+        <div>
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true" style="color: white;">
+            <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
+          </a>
+          <ul class="dropdown-menu text-small" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34.4px, 0px);">
+            <li><a class="dropdown-item" href="logout.php">Выйти из аккаунта</a></li>
+          </ul>
         </div>
       </div>
     </div>
+  </header>

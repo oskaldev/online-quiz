@@ -20,8 +20,8 @@ require_once "header.php";
     <div class="twoblock">
       <a href="#" class="support">Поддержка</a>
       <div class="social">
-        <a href="#" class="social__icons"><i class="fa-brands fa-vk" style="color: #ffffff;"></i></a>
-        <a href="#" class="social__icons"> <i class="fa-regular fa-at" style="color: #ffffff;"></i></a>
+        <a href="https://vk.com/rkript" target="_blank" class="social__icons"><i class="fa-brands fa-vk" style="color: #ffffff;"></i></a>
+        <a href="mailto:rgkript@rgkript.ru" class="social__icons"> <i class="fa-regular fa-at" style="color: #ffffff;"></i></a>
       </div>
     </div>
     <div class="threeblock">
