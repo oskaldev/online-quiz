@@ -1,11 +1,10 @@
 <?php
 require_once "header.php";
 ?>
-<div class="row" style="margin: 0px; padding:0px; margin-bottom: 150px;">
-  <div class="col-lg-8 col-lg-push-2" style="min-height: 500px; background-color: white;border: 1px solid;">
-    <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
-    <div class="col-md-6">
-      <h2 class="center">Export</h2>
+<div class="container" style="margin-bottom: 150px;">
+  <div class="col-lg-12 col-lg-push-2">
+    <div class="col-md-12">
+      <h1 class="result__title">Результаты тестов</h1>
       <div class="form-group select">
         <form method="post" action="excel.php" target="_blank">
           <select name="groups" id="pet-select">

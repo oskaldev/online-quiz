@@ -30,9 +30,10 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   font-size: 100%;
   line-height: 1;
-  font-size: 17px;
+  font-size: 18px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -93,8 +94,6 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #3586ff, #214d8f);
 }
 
-
-
 a:hover {
   transition: all 0.3s ease 0s;
   text-decoration: none;
@@ -127,7 +126,7 @@ a:hover {
 .nav-link {
   color: white;
 }
-.search{
+.search {
   margin-top: -1px;
   background: #3586ff;
 }
@@ -292,3 +291,5 @@ a:hover {
     background-positon-x: 0px;
   }
 }
+
+
