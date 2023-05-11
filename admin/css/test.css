@@ -4,3 +4,67 @@ input {
 select {
   cursor: pointer;
 }
+.result__title {
+  font-size: 30px;
+  text-align: left;
+  font-weight: 500;
+  padding-top: 65px;
+}
+.form-group {
+  display: flex;
+  justify-content: left;
+  padding: 10px 0px;
+}
+.table {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 15px 5px;
+  border: none;
+  text-align: center;
+}
+
+.table thead {
+  background-color: #006df0;
+  color: white;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #e6e6e6;
+}
+
+select {
+  cursor: pointer;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Изменение цвета при наведении */
+select:hover {
+  border-color: #aaa;
+}
+
+/* Изменение цвета при фокусе */
+select:focus {
+  outline: none;
+  cursor: pointer;
+  border-color: #006df0;
+  box-shadow: 0 0 5px #006df0;
+}

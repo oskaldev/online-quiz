@@ -16,11 +16,7 @@ require_once "header.php";
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-
-            <h1 style='text-align:center; padding-bottom:50px;'>Результаты тестов</h1>
-
             <div class="col-md-6">
-              <h2 style='padding-bottom:10px;' class="center">Export</h2>
               <form style='padding-bottom:50px;' method="POST" action="excel.php" target="_blank">
                 <div class="row">
                   <div class="col-md-6">

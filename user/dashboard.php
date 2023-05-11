@@ -9,20 +9,20 @@ require_once "header.php";
     <div class="col-lg-12 col-lg-push-3" style="min-height: 500px; background-color: white;">
       <div>
         <div class="test-wrapper__time">
-          <div>
+          <div class="question">
+            <div class="question-text">Вопрос</div>
             <div id="current_que" style="float:left">0</div>
             <div style="float:left">/</div>
             <div id="total_que" style="float:left">0</div>
           </div>
           <div id="timer" class="timer"></div>
         </div>
-        <div class="row" style="margin-top:30px;">
-          <div class="row">
-            <div class="col-lg-10 col-lg-push-1" style="min-height: 300px; " id="load_questions">
-            </div>
+        <hr>
+        <div class="" style="margin-top:30px;">
+          <div class="" style="min-height: 300px; " id="load_questions">
           </div>
         </div>
-        <div class="row" style="margin-top:10px;">
+        <div class="" style="margin-top:10px;">
           <div class="col-lg-12 col-lg-push-3" style="min-height: 50px;">
             <div class="col-lg-12 text-center">
               <input type="button" value="Previous" class="btn btn-warning" onclick="load_previous();">&nbsp;

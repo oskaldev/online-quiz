@@ -1,14 +1,3 @@
-.timer {
-  display: flex;
-  justify-content: flex-end;
-}
-.test {
-  display: block;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 150px;
-}
 .result__title {
   font-size: 30px;
   text-align: left;

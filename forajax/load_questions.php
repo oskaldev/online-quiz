@@ -33,40 +33,34 @@ if ($count == 0) {
     $opt4 = $row["opt4"];
   }
 ?>
-  <br>
-  <table>
-    <tr>
-      <td style="font-weight:bold; font-size:18px; padding-left:5px" colspan="2">
-        <?php if (strpos($question, 'assets/opt_images/') !== false) { ?>
-          <img src="../admin/<?php echo $question; ?>" height="50" width="50">
-        <?php } else { ?>
-          <?php echo "(" . $question_no . ") " . $question; ?>
-        <?php } ?>
-      </td>
-    </tr>
-  </table>
-
-  <table>
-    <?php if (empty($opt1)) { ?>
-      <input type="text" name="answer" value="<?php echo $ans; ?>" oninput="radioclick(this.value.toLowerCase(), <?php echo $question_no; ?>)">
-    <?php } else { ?>
-      <table>
-        <?php for ($i = 1; $i <= 4; $i++) { ?>
-          <tr>
-            <td>
-              <input type="radio" name="r1" id="r1_<?php echo $i; ?>" value="<?php echo ${"opt{$i}"}; ?>" onclick="radioclick(this.value, <?php echo $question_no; ?>)" <?php echo (strtolower($ans) == strtolower(${"opt{$i}"})) ? "checked" : ""; ?>>
-            </td>
-            <td style="padding-left: 10px">
+  <div class="question-container">
+    <div class="question-header">
+      <?php if (strpos($question, 'assets/opt_images/') !== false) { ?>
+        <img src="../admin/<?php echo $question; ?>" class="question-image">
+      <?php } else { ?>
+        <div class="question-text"><?php echo $question; ?></div>
+      <?php } ?>
+    </div>
+    <div class="answer-options">
+      <?php if (empty($opt1)) { ?>
+        <input type="text" name="answer" class="question-input-text" value="<?php echo $ans; ?>" oninput="radioclick(this.value.toLowerCase(), <?php echo $question_no; ?>)">
+      <?php } else { ?>
+        <div class="option-container">
+          <?php for ($i = 1; $i <= 4; $i++) { ?>
+            <div class="option">
+              <input type="radio" class="question-input-radio" name="r1" id="r1_<?php echo $i; ?>" value="<?php echo ${"opt{$i}"}; ?>" onclick="radioclick(this.value, <?php echo $question_no; ?>)" <?php echo (strtolower($ans) == strtolower(${"opt{$i}"})) ? "checked" : ""; ?>>
               <?php if (strpos(${"opt{$i}"}, 'assets/opt_images/') !== false) { ?>
-                <img src="../admin/<?php echo ${"opt{$i}"}; ?>" height="50" width="50">
+                <img src="../admin/<?php echo ${"opt{$i}"}; ?>" class="option-image">
               <?php } else { ?>
-                <?php echo ${"opt{$i}"}; ?>
+                <div class="option-text"><?php echo ${"opt{$i}"}; ?></div>
               <?php } ?>
-            </td>
-          </tr>
-        <?php } ?>
-      </table>
-    <?php } ?>
-  </table>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+
+
 
 <?php } ?>

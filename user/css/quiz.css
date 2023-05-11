@@ -1,0 +1,111 @@
+.timer {
+  display: flex;
+  justify-content: flex-end;
+}
+.test {
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+.test-wrapper__time {
+  display: flex;
+  justify-content: space-between;
+}
+.question {
+  display: flex;
+  align-items: baseline;
+}
+.question-text {
+  padding: 0px 10px;
+}
+/* Стилизация контейнера вопроса */
+.question-container {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Стилизация заголовка вопроса */
+.question-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+/* Стилизация номера вопроса */
+.question-number {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Стилизация изображения вопроса */
+.question-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Стилизация текста вопроса */
+.question-text {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Стилизация блока с вариантами ответов */
+.answer-options {
+  margin-top: 10px;
+}
+
+/* Стилизация инпутов */
+.question-input-text,
+.question-input-radio {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.question-input-text,
+.question-input-radio {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Стилизация контейнера вариантов ответов */
+.option-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Стилизация отдельного варианта ответа */
+.option {
+  display: flex;
+  align-items: center;
+}
+
+/* Стилизация изображения варианта ответа */
+.option-image {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Стилизация текста варианта ответа */
+.option-text {
+  line-height: 1.5;
+}
+
+/* Добавление анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
