@@ -8,7 +8,7 @@ while ($row = mysqli_fetch_array($res)) {
 }
 ?>
 <div class="breadcrumbs">
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     <div class="page-header float-left">
       <div class="page-title">
         <h1>Добавьте новые вопросы для теста - <?php echo $exam_category ?></h1>
@@ -25,30 +25,24 @@ while ($row = mysqli_fetch_array($res)) {
             <form name="form1" action="" method="post" enctype="multipart/form-data">
               <div class="col-lg-6">
                 <div class="card">
-                  <div class="card-header"><strong>Добавьте новые вопросы</strong></div>
+                  <div class="card-header"><strong>Вариант теста 1</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вопрос</label>
                       <input type="text" name="question" placeholder="Добавьте вопрос" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-1</label>
                       <input type="text" name="opt1" placeholder="Добавьте вариант ответа-1" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-2</label>
                       <input type="text" name="opt2" placeholder="Добавьте вариант ответа-2" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-3</label>
                       <input type="text" name="opt3" placeholder="Добавьте вариант ответа-3" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-4</label>
                       <input type="text" name="opt4" placeholder="Добавьте вариант ответа-4" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте правильный ответ</label>
                       <input type="text" name="answer" placeholder="Добавьте правильный ответ" class="form-control">
                     </div>
                     <div class="form-group">
@@ -60,30 +54,29 @@ while ($row = mysqli_fetch_array($res)) {
 
               <div class="col-lg-6">
                 <div class="card">
-                  <div class="card-header"><strong>Добавьте новые вопросы c картинками</strong></div>
+                  <div class="card-header"><strong>Вариант теста 2</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вопрос</label>
                       <input type="text" name="fquestion" placeholder="Добавьте вопрос" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-1</label>
-                      <input type="file" name="fopt1" class="form-control">
+                      <label class=" form-control-label">Вариант ответа</label>
+                      <input type="file" name="fopt1" placeholder="Добавьте правильный ответ" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-2</label>
+                      <label class=" form-control-label">Вариант ответа</label>
                       <input type="file" name="fopt2" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-3</label>
+                      <label class=" form-control-label">Вариант ответа</label>
                       <input type="file" name="fopt3" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-4</label>
+                      <label class=" form-control-label">Вариант ответа</label>
                       <input type="file" name="fopt4" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте правильный ответ</label>
+                      <label class=" form-control-label">Правильный ответ</label>
                       <input type="file" name="fanswer" class="form-control">
                     </div>
                     <div class="form-group">
@@ -95,30 +88,25 @@ while ($row = mysqli_fetch_array($res)) {
 
               <div class="col-lg-6">
                 <div class="card">
-                  <div class="card-header"><strong>Добавьте новые вопросы</strong></div>
+                  <div class="card-header"><strong>Вариант теста 3</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
                       <label class=" form-control-label">Добавьте вопрос</label>
                       <input type="file" name="iquestion" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-1</label>
                       <input type="text" name="iopt1" placeholder="Добавьте вариант ответа-1" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-2</label>
                       <input type="text" name="iopt2" placeholder="Добавьте вариант ответа-2" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-3</label>
                       <input type="text" name="iopt3" placeholder="Добавьте вариант ответа-3" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте вариант ответа-4</label>
                       <input type="text" name="iopt4" placeholder="Добавьте вариант ответа-4" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте правильный ответ</label>
                       <input type="text" name="ianswer" placeholder="Добавьте правильный ответ" class="form-control">
                     </div>
                     <div class="form-group">
@@ -131,29 +119,25 @@ while ($row = mysqli_fetch_array($res)) {
 
               <div class="col-lg-6">
                 <div class="card">
+                  <div class="card-header"><strong>Вариант теста 4</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
                       <label class=" form-control-label">Добавьте вопрос</label>
                       <input type="file" name="question" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте ответ</label>
-                      <input type="text" name="opt1" class="form-control" readonly>
+                      <input type="text" name="opt1" class="form-control" readonly placeholder="Добавьте вариант ответа-1">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте ответ</label>
-                      <input type="text" name="opt2" class="form-control" readonly>
+                      <input type="text" name="opt2" class="form-control" readonly placeholder="Добавьте вариант ответа-2">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте ответ</label>
-                      <input type="text" name="opt3" class="form-control" readonly>
+                      <input type="text" name="opt3" class="form-control" readonly placeholder="Добавьте вариант ответа-3">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте ответ</label>
-                      <input type="text" name="opt4" class="form-control" readonly>
+                      <input type="text" name="opt4" class="form-control" readonly placeholder="Добавьте вариант ответа-4">
                     </div>
                     <div class="form-group">
-                      <label class=" form-control-label">Добавьте правильный ответ</label>
                       <input type="text" name="answer" placeholder="Добавьте правильный ответ" class="form-control">
                     </div>
                     <div class="form-group">
@@ -175,18 +159,21 @@ while ($row = mysqli_fetch_array($res)) {
         <div class="card">
           <div class="card-body">
             <table class="table table-bordered">
-              <tr>
-                <th>ID </th>
-                <th>Вопросы </th>
-                <th>Ответ-1 </th>
-                <th>Ответ-2 </th>
-                <th>Ответ-3 </th>
-                <th>Ответ-4 </th>
-                <th>Правильный ответ </th>
-                <th>Изменить </th>
-                <th>Удалить </th>
+              <thead>
+                <tr>
+                  <th>ID </th>
+                  <th>Вопросы </th>
+                  <th>Ответ-1 </th>
+                  <th>Ответ-2 </th>
+                  <th>Ответ-3 </th>
+                  <th>Ответ-4 </th>
+                  <th>Правильный ответ </th>
+                  <th>Изменить </th>
+                  <th>Удалить </th>
 
-              </tr>
+                </tr>
+              </thead>
+
               <?php
               $res = mysqli_query($link, "select * from questions where category='$exam_category' order by question_no asc");
               while ($row = mysqli_fetch_array($res)) {

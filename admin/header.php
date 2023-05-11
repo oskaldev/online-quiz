@@ -28,8 +28,8 @@ require_once "../connection.php";
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1336/1336795.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/test.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="global.css">
 </head>
 
 <body></body>
@@ -49,19 +49,19 @@ require_once "../connection.php";
     <div id="main-menu" class="main-menu collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a href="exam_category.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить тему</a>
+          <a href="exam_category.php"> <i class="menu-icon fa fa-plus"></i>Добавить тему</a>
         </li>
         <li>
-          <a href="add_edit_exam_questions.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить тест</a>
+          <a href="add_edit_exam_questions.php"> <i class="menu-icon fa fa-plus"></i>Добавить тест</a>
         </li>
         <li>
-          <a href="old_exam_results.php"> <i class="menu-icon fa fa-dashboard"></i>Результаты тестов</a>
+          <a href="teachers.php"> <i class="menu-icon fa fa-plus"></i>Добавить учителя</a>
         </li>
         <li>
-          <a href="teachers.php"> <i class="menu-icon fa fa-dashboard"></i>Добавить учителя</a>
+          <a href="old_exam_results.php"><i class="menu-icon fas fa-poll-h"></i>Результаты тестов</a>
         </li>
         <li>
-          <a href="users.php"> <i class="menu-icon fa fa-dashboard"></i>Список пользователей</a>
+          <a href="users.php"> <i class="menu-icon fas fa-poll-h"></i>Список пользователей</a>
         </li>
         <li>
           <a href="index.php"> <i class="menu-icon fa fa-close"></i>Выйти из аккаунта</a>

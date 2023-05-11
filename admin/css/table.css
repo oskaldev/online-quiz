@@ -13,6 +13,7 @@ select {
 .form-group {
   display: flex;
   justify-content: left;
+  align-items: baseline;
   padding: 10px 0px;
 }
 .table {
@@ -41,7 +42,7 @@ select {
   background-color: #f2f2f2;
 }
 
-.table tr:hover {
+.table tbody > tr:hover {
   background-color: #e6e6e6;
 }
 

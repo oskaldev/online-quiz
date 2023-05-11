@@ -16,11 +16,10 @@ while ($row = mysqli_fetch_array($res)) {
             <div class="card-body">
               <div class="col-lg-6">
                 <div class="card">
-                  <div class="card-header"><strong>Изменить время экзамена</strong></div>
+                  <div class="card-header"><strong>Изменить время экзамена (минуты)</strong></div>
                   <div class="card-body card-block">
                     <div class="form-group">
-                      <label class=" form-control-label">Изменить</label>
-                      <input type="text" name="examtime" placeholder="Время экзамена" class="form-control" value="<?php echo $exam_time; ?>">
+                      <input type="text" name="examtime" placeholder="Время экзамена(минуты)" class="form-control" value="<?php echo $exam_time; ?>">
                     </div>
 
                     <div class="form-group">

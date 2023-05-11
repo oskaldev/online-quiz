@@ -47,10 +47,10 @@ if (isset($_POST["submit1"])) {
                     <div class="form-group">
                       <form name="form1" method="post" class="form1">
                         <div class="form-group">
-                          <input type="text" name="username" class="reg-input" title="Придумайте никнейм" placeholder="Никнейм" maxlength="50" required>
+                          <input type="text" name="username" class="form-control" title="Придумайте никнейм" placeholder="Никнейм" maxlength="50" required>
                         </div>
                         <div class="form-group">
-                          <input type="password" name="password" class="reg-input" title="Придумайте пароль" placeholder="Пароль" maxlength="100" required>
+                          <input type="password" name="password" class="form-control" title="Придумайте пароль" placeholder="Пароль" maxlength="100" required>
                         </div>
                         <div class="form-group select">
                           <select name="groups" id="pet-select" required>

@@ -135,6 +135,7 @@ if (isset($_POST["submit3"])) {
 if (isset($_POST["submit4"])) {
   $loop = 0;
   $count = 0;
+  $answer = strtolower($_POST['answer']);
   $res = mysqli_query($link, "select * from questions where category='$exam_category' order by id asc ") or die(mysqli_error($link));
   $count = mysqli_num_rows($res);
 
@@ -153,7 +154,7 @@ if (isset($_POST["submit4"])) {
   move_uploaded_file($_FILES["question"]["tmp_name"], $dst);
 
 
-  mysqli_query($link, "insert into questions values(NULL,'$loop', '$dst_db','$_POST[opt1]','$_POST[opt2]','$_POST[opt3]','$_POST[opt4]','$_POST[answer]', '$exam_category')") or die(mysqli_error($link));
+  mysqli_query($link, "insert into questions values(NULL,'$loop', '$dst_db','$_POST[opt1]','$_POST[opt2]','$_POST[opt3]','$_POST[opt4]','$answer', '$exam_category')") or die(mysqli_error($link));
 
 
 ?>

@@ -48,7 +48,6 @@ if ($count == 0) {
   <h2 style='text-align:center; padding-bottom:50px;'> Список пользователей на данный момент пуст</h2>
 <?php
 } else {
-
   echo "<form method='post'>";
   echo "<table class='table table-bordered'>";
   echo "<tr style='background-color: #006df0;border: 1px solid; color:white;'> ";
@@ -70,14 +69,8 @@ if ($count == 0) {
     echo "<td>" . $row["email"] . "</td>";
     echo "</tr>";
   }
-
-  echo "<tr>";
-  echo "<td colspan='6'><button type='submit' class='btn btn-success' name='delete'>Удалить выбранных пользователей</button></td>";
-  echo "</tr>";
-
   echo "</table>";
+  echo "<div><button type='submit' class='btn btn-success' name='delete'>Удалить выбранных пользователей</button></div>";
   echo "</form>";
 }
-
-
 ?>
