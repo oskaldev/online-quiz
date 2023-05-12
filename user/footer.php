@@ -25,7 +25,7 @@ require_once "header.php";
       </div>
     </div>
     <div class="threeblock">
-      <img src="assets/logo/head_center_home.png" alt="" class="imagelogo">
+      <img src="assets/logo/head_center_home.png" alt="" class="logo">
     </div>
   </div>
   <p>&copy; 2023 РКРИПТ | oskaldev</p>

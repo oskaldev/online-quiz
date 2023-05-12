@@ -55,3 +55,7 @@ if (isset($_POST["submit1"])) {
 <?php
 }
 ?>
+
+<?php
+require_once 'footer.php';
+?>

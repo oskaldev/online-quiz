@@ -1,14 +1,31 @@
-.timer {
-  display: flex;
-  justify-content: flex-end;
-}
 .test {
+  background: #a8c0ff;
+  background: -webkit-linear-gradient(to right, #2c2354, #1254ff);
+  background: linear-gradient(to right, #2c2354, #1254ff);
+  padding-top: 80px;
+  overflow-y: hidden;
+  color: #fff;
   padding-top: 50px;
   padding-bottom: 150px;
+  font-size: 20px;
+}
+.quiz {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 70px 0px;
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.timer {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 .test-wrapper__time {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 .question {
   display: flex;
@@ -19,12 +36,12 @@
 }
 /* Стилизация контейнера вопроса */
 .question-container {
-  background-color: #f5f5f5;
-  border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in-out;
+  background: rgba(217, 214, 228, 0.12);
+  border-radius: 10px;
+  padding: 20px 20px 50px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Стилизация заголовка вопроса */
@@ -48,6 +65,7 @@
 
 /* Стилизация текста вопроса */
 .question-text {
+  padding-top: 30px;
   line-height: 1.5;
   margin-bottom: 10px;
 }
@@ -58,18 +76,11 @@
 }
 
 /* Стилизация инпутов */
-.question-input-text,
 .question-input-radio {
   cursor: pointer;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-  transition: border-color 0.3s ease;
+  margin: 0px 10px;
 }
 
-.question-input-text,
 .question-input-radio {
   outline: none;
   border-color: #007bff;
@@ -82,17 +93,124 @@
   gap: 10px;
 }
 
-/* Стилизация отдельного варианта ответа */
 .option {
+  --background: #ffffff;
+  --text: #414856;
+  --radio: #7c96b2;
+  --radio-checked: #4f29f0;
+  --radio-size: 20px;
+  --border-radius: 10px;
+  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  position: relative;
+  padding: 30px;
   display: flex;
   align-items: center;
+  gap: 0.5em;
+}
+.option:hover {
+  background: #232a59;
+  --text: #ffffff;
+  --radio-checked: #ffffff;
+}
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  height: var(--radio-size);
+  width: var(--radio-size);
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+  border: 2px solid var(--radio);
+  background: transparent;
+  border-radius: 50%;
+  display: grid;
+  justify-self: end;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border 0.5s ease;
+}
+input[type='radio']::before,
+input[type='radio']::after {
+  content: '';
+  display: flex;
+  justify-self: center;
+  border-radius: 50%;
+}
+input[type='radio']::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  z-index: 1;
+  opacity: var(--opacity, 1);
+}
+input[type='radio']::after {
+  position: relative;
+  width: calc(100% / 2);
+  height: calc(100% / 2);
+  background: var(--radio-checked);
+  top: var(--y, 100%);
+  transition: top 0.5s cubic-bezier(0.48, 1.97, 0.5, 0.63);
+}
+input[type='radio']:checked {
+  --radio: var(--radio-checked);
+}
+input[type='radio']:checked::after {
+  --y: 0%;
+  -webkit-animation: stretch-animate 0.3s ease-out 0.17s;
+  animation: stretch-animate 0.3s ease-out 0.17s;
+}
+input[type='radio']:checked::before {
+  --opacity: 0;
+}
+input[type='radio']:checked ~ input[type='radio']::after {
+  --y: -100%;
+}
+input[type='radio']:not(:checked)::before {
+  --opacity: 1;
+  transition: opacity 0s linear 0.5s;
+}
+
+@-webkit-keyframes stretch-animate {
+  0% {
+    transform: scale(1, 1);
+  }
+  28% {
+    transform: scale(1.15, 0.85);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes stretch-animate {
+  0% {
+    transform: scale(1, 1);
+  }
+  28% {
+    transform: scale(1.15, 0.85);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 /* Стилизация изображения варианта ответа */
 .option-image {
-  max-width: 100%;
+  max-width: 300px;
   height: auto;
-  margin-right: 10px;
 }
 
 /* Стилизация текста варианта ответа */

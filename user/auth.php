@@ -9,14 +9,14 @@ session_set_cookie_params($session_lifetime);
 // проверяем, авторизован ли пользователь
 if (!isset($_SESSION["username"])) {
   // если не авторизован, то перенаправляем на страницу логина
-  header("Location: ../errors_pages/401.php");
+  header("Location: login.php");
   exit();
 }
 
 // проверяем, прошло ли достаточно времени для смены идентификатора сессии
 if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"] > $session_lifetime)) {
   // если время неактивности пользователя превысило время жизни сессии, то перенаправляем на страницу логина
-  header("Location: ../errors_pages/401.php");
+  header("Location: login.php");
   exit();
 }
 

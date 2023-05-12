@@ -781,6 +781,7 @@ header .form-inline .search-form.close {
 }
 
 .card {
+  margin: 0px 10px;
   margin-bottom: 24px;
   margin-bottom: 1.5rem;
   border-radius: 0;

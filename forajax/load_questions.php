@@ -43,7 +43,7 @@ if ($count == 0) {
     </div>
     <div class="answer-options">
       <?php if (empty($opt1)) { ?>
-        <input type="text" name="answer" class="question-input-text" value="<?php echo $ans; ?>" oninput="radioclick(this.value.toLowerCase(), <?php echo $question_no; ?>)">
+        <input type="text" name="answer" class="form-control" value="<?php echo $ans; ?>" oninput="radioclick(this.value.toLowerCase(), <?php echo $question_no; ?>)">
       <?php } else { ?>
         <div class="option-container">
           <?php for ($i = 1; $i <= 4; $i++) { ?>

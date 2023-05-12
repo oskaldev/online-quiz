@@ -1,7 +1,5 @@
 <?php
 require_once "header.php";
-
-;
 $id = $_GET["id"];
 $id1 = $_GET["id1"];
 
@@ -97,5 +95,5 @@ if (isset($_POST["submit1"])) {
 ?>
 
 <?php
-include 'footer.php';
+require_once 'footer.php';
 ?>

@@ -147,5 +147,5 @@ if (isset($_POST["submit2"])) {
 ?>
 
 <?php
-include 'footer.php';
+require_once 'footer.php';
 ?>

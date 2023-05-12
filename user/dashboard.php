@@ -6,8 +6,8 @@ require_once "header.php";
 
 <section class="test">
   <div class="container">
-    <div class="col-lg-12 col-lg-push-3" style="min-height: 500px; background-color: white;">
-      <div>
+    <div class="col-lg-12 col-lg-push-3" style="min-height: 500px">
+      <div class="quiz">
         <div class="test-wrapper__time">
           <div class="question">
             <div class="question-text">Вопрос</div>
@@ -19,7 +19,7 @@ require_once "header.php";
         </div>
         <hr>
         <div class="" style="margin-top:30px;">
-          <div class="" style="min-height: 300px; " id="load_questions">
+          <div class="" style="min-height: 200px; " id="load_questions">
           </div>
         </div>
         <div class="" style="margin-top:10px;">
