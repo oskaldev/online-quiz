@@ -1,7 +1,13 @@
 .section_our_solution .row {
   align-items: center;
 }
-
+.section_our_solution {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 50px 0px 150px;
+}
 .our_solution_category {
   display: flex;
   flex-direction: row;
@@ -13,7 +19,6 @@
   justify-content: center;
 }
 .solution_cards_box .solution_card {
-  flex: 0 50%;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
   border-radius: 15px;
@@ -24,6 +29,13 @@
   overflow: hidden;
   min-height: 265px;
   transition: 0.7s;
+}
+.result__note {
+  font-size: 15px;
+  color: #f20303;
+  padding-top: 20px;
+  white-space: pre-line;
+  line-height: 22px;
 }
 
 .solution_cards_box .solution_card:hover {
@@ -131,17 +143,12 @@
     top: 0;
   }
 
-  .our_solution_category {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .our_solution_category .solution_cards_box {
+  .solution_cards_box {
     flex: auto;
   }
 }
 @media only screen and (min-width: 768px) {
-  .our_solution_category .solution_cards_box {
+  .solution_cards_box {
     flex: 1;
   }
 }
@@ -149,9 +156,5 @@
   .sol_card_top_3 {
     position: relative;
     top: -3rem;
-  }
-  .our_solution_category {
-    width: 50%;
-    margin: 0 auto;
   }
 }

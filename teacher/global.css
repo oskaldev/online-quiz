@@ -151,7 +151,6 @@ a:hover {
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  min-width: 1240px;
   margin: 0 auto;
 }
 .oneblock {

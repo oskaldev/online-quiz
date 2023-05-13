@@ -25,8 +25,8 @@ require_once "header.php";
         <div class="" style="margin-top:10px;">
           <div class="col-lg-12 col-lg-push-3" style="min-height: 50px;">
             <div class="col-lg-12 text-center">
-              <input type="button" value="Previous" class="btn btn-warning" onclick="load_previous();">&nbsp;
-              <input type="button" value="Next" class="btn btn-success" onclick="load_next();">
+              <input type="button" value="Предыдущий" class="btn btn-warning" onclick="load_previous();" style="color:white">&nbsp;
+              <input type="button" value="Следующий" class="btn btn-success" onclick="load_next();">
             </div>
           </div>
         </div>

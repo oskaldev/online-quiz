@@ -6,12 +6,14 @@ require_once "header.php";
     <input type="text" id="search-input" placeholder="Поиск..." class="form-control">
   </div>
 </section>
-<?php
-$query = "SELECT * FROM exam_category";
-$res = mysqli_query($link, $query);
-while ($row = mysqli_fetch_array($res)) {
-?>
-  <div class="section_our_solution">
+<div class="section_our_solution card-container">
+
+  <?php
+  $query = "SELECT * FROM exam_category";
+  $res = mysqli_query($link, $query);
+  while ($row = mysqli_fetch_array($res)) {
+  ?>
+
     <div class="our_solution_category">
       <div class="solution_cards_box">
         <div class="solution_card">
@@ -62,36 +64,42 @@ while ($row = mysqli_fetch_array($res)) {
             </svg>
           </div>
           <div class="solu_title">
-            <h3 data-category="<?php echo $row["category"]; ?>"><?php echo $row["category"]; ?></h3>
+            <h3 data-category="<?php echo $row["category"]; ?>">Тема: <?php echo $row["category"]; ?></h3>
           </div>
           <div class="solu_description">
-            <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-            </p>
+            <p>Время на прохождение экзамена: <?php echo $row["exam_time"]; ?> минут</p>
             <button type="button" class="read_more_btn" onclick="set_exam_type_session(this.parentNode.previousElementSibling.querySelector('h3').getAttribute('data-category'));">Перейти</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-<?php
-}
-?>
+  <?php
+  }
+  ?>
 </div>
 <script>
-  window.addEventListener('DOMContentLoaded', function() {
-    let searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', function() {
-      let search = searchInput.value.toLowerCase();
-      let searchItems = document.querySelectorAll('.search-item');
-      searchItems.forEach(function(item) {
-        if (item.value.toLowerCase().indexOf(search) >= 0) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+  // Получаем ссылки на необходимые элементы
+  const searchInput = document.getElementById('search-input');
+  const cardContainer = document.getElementById('card-container');
+  const cards = Array.from(document.getElementsByClassName('our_solution_category'));
+
+  // Обработчик события ввода в поле поиска
+  searchInput.addEventListener('input', function() {
+    const searchText = searchInput.value.toLowerCase(); // Получаем введенный текст поиска в нижнем регистре
+
+    // Фильтруем карточки по заголовкам h3
+    const filteredCards = cards.filter(function(card) {
+      const title = card.querySelector('h3').textContent.toLowerCase(); // Получаем текст заголовка h3 в нижнем регистре
+      return title.includes(searchText); // Возвращаем true, если заголовок содержит искомый текст
+    });
+
+    // Показываем отфильтрованные карточки и скрываем остальные
+    cards.forEach(function(card) {
+      if (filteredCards.includes(card)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
   });
 </script>

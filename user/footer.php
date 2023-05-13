@@ -4,31 +4,33 @@ require_once "header.php";
 
 
 <footer class="footer">
-  <div class="waves">
-    <div class="wave" id="wave1"></div>
-    <div class="wave" id="wave2"></div>
-    <div class="wave" id="wave3"></div>
-    <div class="wave" id="wave4"></div>
-  </div>
-  <div class="footer__wrapper">
-    <div class="oneblock">
-      <span class="namesite">РКРИПТ</span>
-      <span class="aboutsite">Ростовский-на-Дону колледж радиоэлектроники
-        и промышленных
-        технологий</span>
+  <div class="container">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
     </div>
-    <div class="twoblock">
-      <a href="#" class="support">Поддержка</a>
-      <div class="social">
-        <a href="https://vk.com/rkript" target="_blank" class="social__icons"><i class="fa-brands fa-vk" style="color: #ffffff;"></i></a>
-        <a href="mailto:rgkript@rgkript.ru" class="social__icons"> <i class="fa-regular fa-at" style="color: #ffffff;"></i></a>
+    <div class="footer__wrapper">
+      <div class="oneblock">
+        <span class="namesite">РКРИПТ</span>
+        <span class="aboutsite">Ростовский-на-Дону колледж радиоэлектроники
+          и промышленных
+          технологий</span>
+      </div>
+      <div class="twoblock">
+        <a href="#" class="support">Поддержка</a>
+        <div class="social">
+          <a href="https://vk.com/rkript" target="_blank" class="social__icons"><i class="fa-brands fa-vk" style="color: #ffffff;"></i></a>
+          <a href="mailto:rgkript@rgkript.ru" class="social__icons"> <i class="fa-regular fa-at" style="color: #ffffff;"></i></a>
+        </div>
+      </div>
+      <div class="threeblock">
+        <img src="assets/logo/head_center_home.png" alt="" class="logo">
       </div>
     </div>
-    <div class="threeblock">
-      <img src="assets/logo/head_center_home.png" alt="" class="logo">
-    </div>
+    <p>&copy; 2023 РКРИПТ | oskaldev</p>
   </div>
-  <p>&copy; 2023 РКРИПТ | oskaldev</p>
 </footer>
 <script src="https://kit.fontawesome.com/1464bddc99.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
