@@ -19,7 +19,7 @@ require_once "header.php";
           технологий</span>
       </div>
       <div class="twoblock">
-        <a href="#" class="support">Поддержка</a>
+        <a href="../other-pages/tp.php" class="support">Поддержка</a>
         <div class="social">
           <a href="https://vk.com/rkript" target="_blank" class="social__icons"><i class="fa-brands fa-vk" style="color: #ffffff;"></i></a>
           <a href="mailto:rgkript@rgkript.ru" class="social__icons"> <i class="fa-regular fa-at" style="color: #ffffff;"></i></a>
