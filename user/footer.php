@@ -1,8 +1,3 @@
-<?php
-require_once "header.php";
-?>
-
-
 <footer class="footer">
   <div class="container">
     <div class="waves">

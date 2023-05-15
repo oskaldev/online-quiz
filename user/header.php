@@ -40,7 +40,6 @@ require_once "../connection.php";
           <img src="assets/logo/logo.png" alt="" class="bi me-2" width="50px" height="50px">
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Личный кабинет</a></li>
           <li><a href="select_exam.php" class="nav-link px-2 link-body-emphasis">Выбрать тест</a></li>
           <li><a href="old_exam_results.php" class="nav-link px-2 link-body-emphasis">Последние результаты</a></li>
           <li><a href="http://rgkript.ru/kontaktyi/" class="nav-link px-2 link-body-emphasis">Контакты</a></li>
