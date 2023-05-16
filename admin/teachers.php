@@ -52,7 +52,7 @@ if (isset($_POST["submit1"])) {
                         <div class="form-group">
                           <input type="password" name="password" class="form-control" title="Придумайте пароль" placeholder="Пароль" maxlength="100" required>
                         </div>
-                        <div class="form-group select">
+                        <!-- <div class="form-group select">
                           <select name="groups" id="pet-select" required>
                             <option value="">Пожалуйста выберете группу</option>
                             <option value="ПО-42">ПО-42</option>
@@ -60,7 +60,7 @@ if (isset($_POST["submit1"])) {
                             <option value="ПО-22">ПО-22</option>
                             <option value="ПО-12">ПО-12</option>
                           </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                           <button type="submit" name="submit1" class="btn btn-success">Добавить учителя</button>
                         </div>
@@ -82,8 +82,6 @@ if (isset($_POST["submit1"])) {
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Никнейм</th>
-                          <th scope="col">Группа</th>
-                          <th scope="col">Изменить группу</th>
                           <th scope="col">Удалить</th>
                         </tr>
                       </thead>
@@ -98,8 +96,6 @@ if (isset($_POST["submit1"])) {
                           <tr>
                             <th scope="row"><?php echo $count ?></th>
                             <td><?php echo $row["username"]; ?></td>
-                            <td><?php echo $row["groups"]; ?></td>
-                            <td><a href="edit_teachers.php?id=<?php echo $row["id"]; ?>">Изменить группу</a></td>
                             <td><a href="delete_teachers.php?id=<?php echo $row["id"]; ?>">Удалить</a></td>
                           </tr>
                         <?php
