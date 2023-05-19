@@ -11,7 +11,7 @@ if (!isset($_SESSION["admin"])) {
 
 
 <?php
-if (isset($_POST["submit1"])) {
+if (isset($_POST["submit"])) {
   $loop = 0;
   $count = 0;
   $res = mysqli_query($link, "select * from questions where category='$exam_category' order by id asc ") or die(mysqli_error($link));
@@ -25,7 +25,8 @@ if (isset($_POST["submit1"])) {
     }
   }
   $loop = $loop + 1;
-  mysqli_query($link, "insert into questions values(NULL,'$loop', '$_POST[question]','$_POST[opt1]','$_POST[opt2]','$_POST[opt3]','$_POST[opt4]','$_POST[answer]', '$exam_category')") or die(mysqli_error($link));
+  mysqli_query($link, "insert into questions values(NULL,'$loop', '$_POST[question]','$_POST[qopt1]','$_POST[qopt2]','$_POST[qopt3]','$_POST[qopt4]',
+  '$_POST[qanswer]', '$exam_category')") or die(mysqli_error($link));
 
 
 ?>

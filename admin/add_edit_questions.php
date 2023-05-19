@@ -31,22 +31,22 @@ while ($row = mysqli_fetch_array($res)) {
                       <input type="text" name="question" placeholder="Добавьте вопрос" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="opt1" placeholder="Добавьте вариант ответа-1" class="form-control">
+                      <input type="text" name="qopt1" placeholder="Добавьте вариант ответа-1" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="opt2" placeholder="Добавьте вариант ответа-2" class="form-control">
+                      <input type="text" name="qopt2" placeholder="Добавьте вариант ответа-2" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="opt3" placeholder="Добавьте вариант ответа-3" class="form-control">
+                      <input type="text" name="qopt3" placeholder="Добавьте вариант ответа-3" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="opt4" placeholder="Добавьте вариант ответа-4" class="form-control">
+                      <input type="text" name="qopt4" placeholder="Добавьте вариант ответа-4" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="answer" placeholder="Добавьте правильный ответ" class="form-control">
+                      <input type="text" name="qanswer" placeholder="Добавьте правильный ответ" class="form-control">
                     </div>
                     <div class="form-group">
-                      <input type="submit" name="submit1" value="Добавить" class="btn btn-success">
+                      <input type="submit" name="submit" value="Добавить" class="btn btn-success">
                     </div>
                   </div>
                 </div>
