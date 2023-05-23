@@ -8,7 +8,7 @@
     </div>
     <div class="footer__wrapper">
       <div class="oneblock">
-        <span class="namesite">РКРИПТ</span>
+        <a href="http://rgkript.ru/" class="namesite">РКРИПТ</a>
         <span class="aboutsite">Ростовский-на-Дону колледж радиоэлектроники
           и промышленных
           технологий</span>
@@ -24,8 +24,8 @@
         <img src="assets/logo/head_center_home.png" alt="" class="logo">
       </div>
     </div>
-    <p>&copy; 2023 РКРИПТ | oskaldev</p>
   </div>
+  <p>&copy; 2023 РКРИПТ | Калантарян Артём ПО-42</p>
 </footer>
 <script src="https://kit.fontawesome.com/1464bddc99.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
