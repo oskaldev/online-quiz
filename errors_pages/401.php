@@ -10,7 +10,7 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>401 - Unauthorized</title>
-  <link rel="stylesheet" href="../errors_pages/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@ session_start();
           <div class="box__description-title">Доступ запрещен !</div>
           <div class="box__description-text">Вы не можете получить доступ к запрашиваемому ресурсу без правильной аутентификации.</div>
         </div>
-        <a href="#" onclick="goBack()" class="yes">YES</a>
+        <a href="#" onclick="goBack()" class="box__button">YES</a>
       </div>
     </div>
 

@@ -39,7 +39,7 @@ session_start();
           <div class="box__description-title">Доступ запрещен !</div>
           <div class="box__description-text">Вы не можете получить доступ к запрашиваемому ресурсу, лучше не надо :) </div>
         </div>
-        <a href="#" onclick="goBack()" class="yes">YES</a>
+        <a href="#" onclick="goBack()" class="box__button">YES</a>
       </div>
     </div>
     <script>
