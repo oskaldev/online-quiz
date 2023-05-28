@@ -15,7 +15,7 @@ if (isset($_POST["submit1"])) {
     </div>
     ';
   } else {
-    mysqli_query($link, "insert into teachers values(NULL, '$_POST[username]','$password', '$_POST[groups]')") or die(mysqli_error($link));
+    mysqli_query($link, "insert into teachers values(NULL, '$_POST[username]','$password')") or die(mysqli_error($link));
     $success_message = '
       <div class="alert alert-success" id="success" style="margin-top:10px">
               <strong>Успех!</strong> Учитель успешно добавлен !
