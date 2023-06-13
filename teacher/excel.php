@@ -14,19 +14,21 @@ include "../connection.php";
 $output = '';
 
 if (isset($_POST["export_btn"])) {
-  if (isset($_POST['groups'])) {
-    $group = $_POST['groups'];
-    $examTime = $_POST['exam_time'] ? date('Y-m-d', strtotime($_POST['exam_time'])) : "";
-    if ($group != "" && $examTime != "" && strtotime($_POST['exam_time']) !== false) {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' AND DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
-    } elseif ($group != "" && $examTime == "") {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' ");
-    } elseif ($group === "" && $examTime != "" && $examTime != "1970-01-01") {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
-    } else {
-      $res = mysqli_query($link, "SELECT * FROM exam_results");
-    }
+  $exportTitle = "ТЕСТИРОВАНИЕ ПО АНГЛИЙСКОМУ ЯЗЫКУ";
+  $group = $_POST['groups'];
+  $examTime = $_POST['exam_time'] ? date('Y-m-d', strtotime($_POST['exam_time'])) : "";
+
+  if ($group != "" && $examTime != "" && strtotime($_POST['exam_time']) !== false) {
+    $exportTitle .= " ГРУППА $group ДАТА $examTime";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' AND DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
+  } elseif ($group != "" && $examTime == "") {
+    $exportTitle .= " ГРУППА $group ЗА ВСЁ ВРЕМЯ";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group'");
+  } elseif ($group === "" && $examTime != "" && $examTime != "1970-01-01") {
+    $exportTitle .= " ДАТА $examTime ВСЕ ГРУППЫ";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
   } else {
+    $exportTitle .= " ВСЕ РЕЗУЛЬТАТЫ ВСЕХ ГРУПП";
     $res = mysqli_query($link, "SELECT * FROM exam_results");
   }
 
@@ -35,11 +37,14 @@ if (isset($_POST["export_btn"])) {
     printf("Error: %s\n", mysqli_error($link));
     exit();
   }
-  // 
+
   $count = mysqli_num_rows($res);
   if ($count > 0) {
     $output .= '
     <table class="table border="1">
+      <tr>
+        <th colspan="8">' . $exportTitle . '</th>
+      </tr>
       <tr>
         <th>никнейм</th>
         <th>группа</th>
@@ -70,27 +75,30 @@ if (isset($_POST["export_btn"])) {
     header("Cache-Control: no-cache, must-revalidate");
     header("Pragma: no-cache");
     header("Content-type: application/vnd.ms-excel;");
-    header("Content-Disposition:attachment; filename=result-test.xls");
+    header("Content-Disposition: attachment; filename=результаты-тестирования-английский.xls");
     echo $output;
   } else {
     echo "Нет результатов для экспорта";
   }
 }
 
+
 if (isset($_POST["export_csv"])) {
-  if (isset($_POST['groups'])) {
-    $group = $_POST['groups'];
-    $examTime = $_POST['exam_time'] ? date('Y-m-d', strtotime($_POST['exam_time'])) : "";
-    if ($group != "" && $examTime != "" && strtotime($_POST['exam_time']) !== false) {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' AND DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
-    } elseif ($group != "" && $examTime == "") {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' ");
-    } elseif ($group === "" && $examTime != "" && $examTime != "1970-01-01") {
-      $res = mysqli_query($link, "SELECT * FROM exam_results WHERE DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
-    } else {
-      $res = mysqli_query($link, "SELECT * FROM exam_results");
-    }
+  $exportTitle = "ТЕСТИРОВАНИЕ ПО АНГЛИЙСКОМУ ЯЗЫКУ";
+  $group = $_POST['groups'];
+  $examTime = $_POST['exam_time'] ? date('Y-m-d', strtotime($_POST['exam_time'])) : "";
+
+  if ($group != "" && $examTime != "" && strtotime($_POST['exam_time']) !== false) {
+    $exportTitle .= " ГРУППА $group ДАТА $examTime";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group' AND DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
+  } elseif ($group != "" && $examTime == "") {
+    $exportTitle .= " ГРУППА $group ЗА ВСЁ ВРЕМЯ";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE `groups` = '$group'");
+  } elseif ($group === "" && $examTime != "" && $examTime != "1970-01-01") {
+    $exportTitle .= " ДАТА $examTime ВСЕ ГРУППЫ";
+    $res = mysqli_query($link, "SELECT * FROM exam_results WHERE DATE_FORMAT(`exam_time`, '%Y-%m-%d') = '$examTime'");
   } else {
+    $exportTitle .= " ВСЕ РЕЗУЛЬТАТЫ ВСЕХ ГРУПП";
     $res = mysqli_query($link, "SELECT * FROM exam_results");
   }
   // проверка
@@ -102,6 +110,7 @@ if (isset($_POST["export_csv"])) {
 
   if ($count > 0) {
 
+    $output .= $exportTitle . "\n\n";
     $output .= "никнейм;группа; тема экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
     while ($row = mysqli_fetch_array($res)) {
       $output .= '"' . $row["username"] . '";"' . $row["groups"] . '";"' . $row["exam_type"] . '";"' . $row["total_question"] . '";"' . $row["correct_answer"] . '";"' . $row["wrong_answer"] . '";"' . $row["exam_time"] . '";"' . $row["estimation"] . "\"\n";
@@ -110,7 +119,7 @@ if (isset($_POST["export_csv"])) {
     header("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
     header('Content-Encoding: UTF-8');
     header('Content-Type: text/csv; charset=utf-8');
-    header('Content-Disposition: attachment; filename=result-test.csv');
+    header('Content-Disposition: attachment; filename=результаты-тестирования-английский.csv');
 
     echo $output;
   } else {
