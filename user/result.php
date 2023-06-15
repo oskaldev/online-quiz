@@ -136,10 +136,21 @@ require_once "../connection.php";
             $count = mysqli_num_rows($res);
             $wrong = $count - $correct;
             $estimation = round($correct / $count * 100, 0);
+            $grade = '';
+            if ($estimation < 70) {
+              $grade = '2';
+            } elseif ($estimation >= 70 && $estimation <= 79) {
+              $grade = '3';
+            } elseif ($estimation >= 80 && $estimation <= 89) {
+              $grade = '4';
+            } elseif ($estimation >= 90 && $estimation <= 100) {
+              $grade = '5';
+            }
             echo "<div class='solu_title'><h3>Всего вопросов: $count</h3></div>";
             echo "<div class='solu_title'><h3>Правильных ответов: $correct</h3></div>";
             echo "<div class='solu_title'><h3>Не правильных ответов: $wrong</h3></div>";
             echo "<div class='solu_title'><h3>Баллы: $estimation</h3></div>";
+            echo "<div class='solu_title'><h3>Оценка: $grade</h3></div>";
             echo "<div class='solu_description'>
           <p class='result__note'>Баллы считаются по 100 бальной шкале, где ниже:
 69 баллов оценка - 2
@@ -165,7 +176,7 @@ require_once "../connection.php";
     $rows = mysqli_fetch_assoc($result);
     $groups = $rows['groups'];
     $date = date("Y-m-d");
-    mysqli_query($link, "insert into exam_results (username, exam_type, total_question, correct_answer, wrong_answer, exam_time, estimation, `groups`) values('$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date', '$estimation', '$groups') ") or die(mysqli_error($link));
+    mysqli_query($link, "insert into exam_results (username, exam_type, total_question, correct_answer, wrong_answer, exam_time, estimation, grade, `groups`) values('$_SESSION[username]','$_SESSION[exam_category]','$count','$correct','$wrong','$date', '$estimation', $grade, '$groups') ") or die(mysqli_error($link));
   }
 
   if (isset($_SESSION["exam_start"])) {

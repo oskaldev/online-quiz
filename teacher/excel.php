@@ -54,6 +54,7 @@ if (isset($_POST["export_btn"])) {
         <th>не правильных ответов</th>
         <th>время экзамена</th>
         <th>баллы</th>
+        <th>оценка</th>
       </tr>
     ';
     while ($row = mysqli_fetch_array($res)) {
@@ -67,6 +68,7 @@ if (isset($_POST["export_btn"])) {
         <td>' . $row["wrong_answer"] . '</td>
         <td>' . $row["exam_time"] . '</td>
         <td>' . $row["estimation"] . '</td>
+        <td>' . $row["grade"] . '</td>
       </tr>
       ';
     }
@@ -111,9 +113,9 @@ if (isset($_POST["export_csv"])) {
   if ($count > 0) {
 
     $output .= $exportTitle . "\n\n";
-    $output .= "никнейм;группа; тема экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы\n";
+    $output .= "никнейм;группа; тема экзамена; всего вопросов; правильных ответов; не правильных ответов; время экзамена; баллы; оценка\n";
     while ($row = mysqli_fetch_array($res)) {
-      $output .= '"' . $row["username"] . '";"' . $row["groups"] . '";"' . $row["exam_type"] . '";"' . $row["total_question"] . '";"' . $row["correct_answer"] . '";"' . $row["wrong_answer"] . '";"' . $row["exam_time"] . '";"' . $row["estimation"] . "\"\n";
+      $output .= '"' . $row["username"] . '";"' . $row["groups"] . '";"' . $row["exam_type"] . '";"' . $row["total_question"] . '";"' . $row["correct_answer"] . '";"' . $row["wrong_answer"] . '";"' . $row["exam_time"] . '";"' . $row["estimation"] . '";"' . $row["grade"] . "\"\n";
     }
     $output = iconv("UTF-8", "Windows-1251//IGNORE", $output);
     header("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");

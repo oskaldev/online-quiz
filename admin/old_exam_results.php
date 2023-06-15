@@ -51,6 +51,7 @@ require_once "header.php";
           <th>не правильные ответы</th>
           <th>дата</th>
           <th>баллы</th>
+          <th>оценка</th>
           </tr>";
 
               while ($row = mysqli_fetch_array($res)) {
@@ -62,6 +63,7 @@ require_once "header.php";
             <td>" . $row["wrong_answer"] . "</td>
             <td>" . $row["exam_time"] . "</td>
             <td>" . $row["estimation"] . "</td>
+            <td>" . $row["grade"] . "</td>
           </tr>";
               }
               echo "</table>";
